@@ -48,19 +48,19 @@ import org.apache.http.util.EntityUtils;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.query.ResultSetFactory;
 import com.hp.hpl.jena.query.ResultSetFormatter; 
-public class VirtuosoTest {
+public class VirtuosoSelectTest {
 
     public static void main(String[] args) throws Exception {
     	
     	String readEndpointURI = "http://128.253.87.162:8890/sparql";
-    	String updateEndpointURI = "http://128.253.87.162:8890/sparql";
+    	 
     	String resultSetFormat = "application/rdf+xml";
     	
         CloseableHttpClient httpclient = HttpClients.createDefault();
         System.out.println("Test SELECT query");
         try {
             //String queryStr = "SELECT DISTINCT ?g WHERE { GRAPH ?g { ?s ?p ?o } } ORDER BY ?g";
-            String queryStr = "SELECT ?s ?p ?o WHERE {  ?s ?p ?o } LIMIT 20";
+            String queryStr = "SELECT ?s ?p ?o WHERE {  ?s ?p ?o } ";
             HttpGet httpGet = new HttpGet(new URIBuilder(readEndpointURI).addParameter("query", queryStr).build());
             CloseableHttpResponse response1 = httpclient.execute(httpGet);
             // The underlying HTTP connection is still held by the response object
@@ -85,40 +85,11 @@ public class VirtuosoTest {
             } finally {
                 response1.close();
             } 
-            
-            /*try {
-                System.out.println(response1.getStatusLine());
-                HttpEntity entity1 = response1.getEntity(); 
-                EntityUtils.consume(entity1);
-            } finally {
-                response1.close();
-            }*/
-            System.out.println("Test SPARQL INSERT");
-            String updateString = "INSERT IN GRAPH <http://vitro.mannlib.cornell.edu/default/vitro-kb-2> {<http://128.253.87.162:8080/vivo/individual/n588213175> <http://www.w3.org/2006/vcard/ns#country> 'Egypt'^^<http://www.w3.org/2001/XMLSchema#string> .}";
-
-            HttpPost httpPost = new HttpPost(updateEndpointURI);
-            httpPost.addHeader("Content-Type", "application/x-www-form-urlencoded");
-            //httpPost.addHeader("Content-Type", "application/sparql-query"); 
-            
-            //httpPost.setEntity(new UrlEncodedFormEntity(Arrays.asList(new BasicNameValuePair("update", updateString))));
-            List <NameValuePair> nvps = new ArrayList <NameValuePair>();
-            nvps.add(new BasicNameValuePair("update", updateString));
-            nvps.add(new BasicNameValuePair("username", "dba"));
-            nvps.add(new BasicNameValuePair("password", "skikt22"));
-            httpPost.setEntity(new UrlEncodedFormEntity(nvps));
-            CloseableHttpResponse response2 = httpclient.execute(httpPost);
-
-            try {
-                int statusCode = response2.getStatusLine().getStatusCode();                
-                System.out.println("response " + statusCode + " to update. \n");
-                     
-                
-            } finally {
-                response2.close();
-            } 
-        } finally {
-            httpclient.close();
+        } catch (Exception e) {
+        	e.printStackTrace();
         }
+        System.out.println("Done.");
+             
     }
 
 }
