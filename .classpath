@@ -26,5 +26,7 @@
 	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.6.6.jar"/>
 	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="lib/virt_jena2.jar"/>
+	<classpathentry kind="lib" path="lib/virtjdbc4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
