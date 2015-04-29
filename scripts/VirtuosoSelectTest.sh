@@ -1,5 +1,5 @@
 #!/bin/bash
-CLASSES=../bin
+CLASSES=../build
 LIB=../lib
 OPTS=
 CLASSPATH=$(JARS=("$LIB"/*.jar); IFS=:; echo "${JARS[*]}")
