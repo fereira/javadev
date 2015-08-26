@@ -28,5 +28,31 @@
 	<classpathentry kind="lib" path="lib/log4j-1.2.16.jar"/>
 	<classpathentry kind="lib" path="lib/virt_jena2.jar"/>
 	<classpathentry kind="lib" path="lib/virtjdbc4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/ldclient-api-3.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/ldclient-core-3.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/ldpath-api-3.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/ldpath-core-3.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/marmotta-client-java-3.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/marmotta-core-3.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-query-2.7.15.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-rio-api-2.7.15.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-util-2.7.15.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-model-2.7.15.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-queryresultio-api-2.7.15.jar"/>
+	<classpathentry kind="lib" path="lib/solr-core-4.10.4.jar"/>
+	<classpathentry kind="lib" path="lib/solr-solrj-4.10.4.jar"/>
+	<classpathentry kind="lib" path="lib/lucene-analyzers-common-4.10.4.jar"/>
+	<classpathentry kind="lib" path="lib/lucene-core-4.10.4.jar"/>
+	<classpathentry kind="lib" path="lib/lucene-queryparser-4.10.4.jar"/>
+	<classpathentry kind="lib" path="resources"/>
+	<classpathentry kind="lib" path="lib/jena-fuseki-1.1.2-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib/noggit-0.5.jar"/>
+	<classpathentry kind="lib" path="lib/commons-text-0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/htmlparser.jar"/>
+	<classpathentry kind="lib" path="lib/commons-csv-1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
