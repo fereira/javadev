@@ -66,6 +66,9 @@ text:TextIndexLucene  rdfs:subClassOf   text:TextIndex .
     text:directory <file:/usr/local/src/javadev/onld/lucene> ;
     ##text:directory "mem" ;
     text:entityMap <#entMap> ;
+    text:queryAnalyzer [
+       a text:KeywordAnalyzer
+    ]
     .
 
 <#entMap> a text:EntityMap ;

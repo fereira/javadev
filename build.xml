@@ -10,7 +10,7 @@ The default target (build) will compile all classes
 "clean" will remove the classfiles
 
 -->
-<project name="javadev" default="compile" basedir=".">
+<project name="javadev" default="build" basedir=".">
 
 
    <!-- Create the build.properties file from localbuild.properties
@@ -38,6 +38,14 @@ The default target (build) will compile all classes
 
   <target name="prepare">
     <mkdir dir="${build.dir}" />
+  </target>
+
+  <target name="build" depends="compile">
+      <copy todir="build" preservelastmodified="true">
+         <fileset dir="resources">
+            <include name="log4j.properties" />
+         </fileset>
+      </copy>
   </target>
 
   <target name="compile" depends="prepare">

@@ -1,4 +1,4 @@
-package net.fereira.tdb;
+package net.fereira.agrovoc;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -17,9 +17,9 @@ import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.tdb.TDBFactory;
 import com.hp.hpl.jena.util.FileManager;
 
-public class QueryONLD {
+public class QueryAgrovoc {
 
-	public QueryONLD() {
+	public QueryAgrovoc() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -27,7 +27,7 @@ public class QueryONLD {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		QueryONLD app = new QueryONLD();
+		QueryAgrovoc app = new QueryAgrovoc();
 		System.out.println("Query ONLD");
 		String term = new String();
 		if (args.length > 0) {
