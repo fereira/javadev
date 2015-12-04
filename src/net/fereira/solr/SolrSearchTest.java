@@ -26,9 +26,10 @@ import org.xml.sax.SAXException;
 
 public class SolrSearchTest {
 	
-	private static String solrHome = "/usr/local/solr";
-	private static String solrServer = "http://jaf30-dev.library.cornell.edu:8080/solr/agrovoc/";
-
+	//private static String solrHome = "/usr/local/solr";
+	private static String solrServer = "http://teealdev-solr.library.cornell.edu/solr/aki";
+    //private static String serviceURL = "http://jaf30-dev-new.library.cornell.edu:8080/vitrosolr";
+    
 	/**
 	 * @param args
 	 */
@@ -42,13 +43,14 @@ public class SolrSearchTest {
 		//File home = new File(solrHome);
 	    //File f = new File( home, "solr.xml" );
 		SolrServer server = new HttpSolrServer(solrServer);
-	    String query = new String("swine");
+		
+	    String query = new String("GHANA ENVIRONMENT");
 	    this.search(server, query);
 	}
 	
 	private void search(SolrServer server, String queryString) {
 		 
-	    String returnFields = "@en/skos:prefLabel/, @en/skos:altLabel/ ";
+	    String returnFields = "*";
 	    String filterQuery = "*:*";
 	    
 		SolrDocumentList docs = getSolrDocuments(server, queryString, filterQuery, returnFields);
@@ -57,16 +59,13 @@ public class SolrSearchTest {
 	    while (iter.hasNext()) {	    	
 		   
 		   SolrDocument doc = iter.next();
-		   List<String> labels = (List<String>) doc.getFieldValue("@en/skos:prefLabel/");
-		   for (String label: labels) {
-		      System.out.println(queryString+": "+label);
-	       }
+		    
 		   Map map = doc.getFieldValuesMap();
 		   Iterator iter2 = map.keySet().iterator();
 		   while (iter2.hasNext()) {
 			  Object key = iter2.next();
 			  Object val = map.get(key);
-			  System.out.println("key: "+ key +", val: "+ val);				
+			  System.out.println(key +" : "+ val);				
 		   } 
 	    }
 	}
@@ -80,6 +79,7 @@ public class SolrSearchTest {
 		solrParams.set("rows", Integer.MAX_VALUE);
 		solrParams.set("fl", fl);
 		solrParams.set("fq", fq);
+		solrParams.set("qt", "standard");
 		QueryResponse rsp = null;
 		try {
 			rsp = server.query(solrParams);
