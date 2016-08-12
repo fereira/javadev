@@ -1,4 +1,4 @@
-package net.fereira.jackson;
+package net.fereira.json;
 
 import java.io.File;
 import java.io.IOException;

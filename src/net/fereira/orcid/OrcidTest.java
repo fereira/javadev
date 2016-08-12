@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -46,7 +47,7 @@ public class OrcidTest {
 	}
 	
 	protected void run() {
-	   String orcid = "0000-0003-3860-4304";
+	   String orcid = "0000-0002-5982-8983";
 	   String json = getOrcidJson(orcid);
 	   //System.out.println(json);
 	   parseJson(json);
@@ -121,7 +122,7 @@ public class OrcidTest {
 			 
 			JSONObject orcidProfile = (JSONObject) jsonObject.get("orcid-profile"); // jsonObject
 			if (orcidProfile == null) return resultMap;
-			
+			 
 			if (orcidProfile.containsKey("orcid-activities")) { 
 				JSONObject orcidActivities = (JSONObject) orcidProfile.get("orcid-activities"); 
 				
@@ -132,8 +133,8 @@ public class OrcidTest {
 						Iterator<?> workIter = orcidWorkArray.iterator();
 						while (workIter.hasNext()) {
 							JSONObject work = (JSONObject) workIter.next();
-							if (work != null) printIterator(work);
-							if (work.containsKey("work-title")) {
+							//if (work != null) printIterator(work);
+							if (work != null && work.containsKey("work-title")) {
 							   JSONObject workTitle = (JSONObject) work.get("work-title");
 							   JSONObject title = (JSONObject) workTitle.get("title");
 							   profile.setTitle(title.get("value").toString());	
@@ -141,6 +142,7 @@ public class OrcidTest {
 							if (work.containsKey("work-type")) { 
 							   profile.setDocType(work.get("work-type").toString());	
 							}
+							 
 							
 						}
 						 

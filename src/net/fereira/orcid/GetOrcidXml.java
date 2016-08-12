@@ -50,7 +50,7 @@ public class GetOrcidXml {
 	
 	protected void run() {
 	   try {
-		  List<String> lines = FileUtils.readLines(new File("/usr/local/src/AgriVivo/harvesters/orcid_pubs/orcidlist.txt"));
+		  List<String> lines = FileUtils.readLines(new File("/usr/local/src/javadev/data/orcidlist.txt"));
 		  for (String orcid: lines) {
 		     //System.out.println("orcid: "+orcid);
 		     String xml = getOrcidXml(orcid);
