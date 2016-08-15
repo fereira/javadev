@@ -37,11 +37,12 @@ public class MapTest {
 		for (int i=0; i < 1000; i++) {
 			map.put(" "+i+" ", " "+i+" ");
 		}
-		solSet.add(map);
-	
+		for (int i=0; i <10 ; i++) {
+		   solSet.add(map);
+		}
 		 
 		System.out.println("set size: "+ solSet.size()); 
-		System.out.println("set hashdoce: "+ solSet.hashCode());
+		System.out.println("set hashcode: "+ solSet.hashCode());
 	}
 	
 	private static Set<Map<String, String>> getNewSolSet() {
