@@ -9,11 +9,16 @@ public class ClientTest {
 	}
 
 	public static void main(String[] args) {
-		String input="Giannis Stoitsis is a person";
+		String input="John Fereira, United States";
+		//String input="Cornell";
 		String source_lang = "en";
 		String target_lang = "en";
-		ClientResponse response = FREMEProjectsClient.postText(input, source_lang, target_lang);
+		String dataset = "orcid";
+		ClientResponse response = EntityClient.postText(input, source_lang, target_lang, dataset);
+		//ClientResponse response = DatasetClient.postText(input, source_lang, target_lang);
         System.out.println("status: "+ response.getStatus());
+        String output = response.getEntity(String.class);
+        System.out.println(output);
 	}
 
 }

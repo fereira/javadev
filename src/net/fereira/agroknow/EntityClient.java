@@ -4,29 +4,29 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
-public class FREMEProjectsClient {
+public class EntityClient {
 	
 
 	//public static void main(String[] args) {}
 	static ClientResponse output;
 	//static String output;
 	
-	public static ClientResponse postText(String input,String source_lang,String target_lang ){
+	public static ClientResponse postText(String input, String source_lang, String target_lang, String dataset){
 		try {
 			
 			//Parameter definitions
 		   // input="The article shows the need to develop preparations antioxidant actions and identify the preparative form, optimal for use in a stressful poultry industry. Because the impact of negative factors emergency force feeding a bird is greatly reduced, the body experiences a deficiency of biologically active substancesand their additional introduction food is ineffection, need to find other ways of introducing biological additives. As a means of antioxidant action is proposedthe use of marsh cinquefoil, which consists of flavonoids - hesperidin, luteolin-7-glycoside, robinin, vicenin,dihydroquercetin, hyperoside";
 		    String informat= "text";
 		    String outformat = "json-ld";
-			source_lang= "en" ;
-			target_lang = "en";
-			String dataset= "cordis-fp7";
+			//source_lang= "en" ;
+			//target_lang = "en";
+			//String dataset= "orcid";
 				 
 			Client client = Client.create();
 	 //http://api.freme-project.eu/0.3/e-entity/freme-ner/documents
 			//?input=Giannis Stoitsis is a person.&informat=text&outformat=turtle&language=en&dataset=cordis-fp7
 			WebResource webResource = client
-			   .resource("http://api.freme-project.eu/0.6/e-entity/freme-ner/documents")
+			   .resource("http://api.freme-project.eu/current/e-entity/freme-ner/documents")
 			   .queryParam("input", input)
 			   .queryParam("informat", informat)
 			   .queryParam("outformat", outformat)
