@@ -70,7 +70,18 @@ public class GPX2Text {
 		System.out.println("desc: "+ gpx.getDesc());
 		List<Waypoint> waypoints = gpx.getWaypoints();
 		for (Waypoint wpt: waypoints) {
-			System.out.println(wpt.toString());
+			System.out.println("wpt/name: "+wpt.getName());
+			System.out.println("wpt/desc: "+wpt.getDesc());
+			System.out.println("wpt/lat: "+wpt.getLat());
+			System.out.println("wpt/lon: "+wpt.getLon());
+			System.out.println("wpt/url: "+wpt.getUrl());
+			System.out.println("wpt/urlname: "+wpt.getUrlname());
+			System.out.println("wpt/sym: "+wpt.getSym());
+			System.out.println("wpt/type: "+wpt.getType());
+			Groundspeak groundspeak = wpt.getGroundspeak();
+			System.out.println("wpt/groundspeak:name : "+groundspeak.getName());
+			System.out.println("wpt/groundspeak:placed_by : "+groundspeak.getPlaced_by());
+					
 		}
 		
 		
