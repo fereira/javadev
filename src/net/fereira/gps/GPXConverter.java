@@ -47,13 +47,13 @@ public class GPXConverter implements Converter {
                 reader.moveDown(); reader.getValue(); reader.moveUp(); // skip email
                 reader.moveDown(); reader.getValue(); reader.moveUp(); // skip time
                 reader.moveDown(); reader.getValue(); reader.moveUp(); // skip keywords
-                reader.moveDown(); reader.getValue(); reader.moveUp(); // skip keywords
+                reader.moveDown(); reader.getValue(); reader.moveUp(); // skip bounds
                 // Handle waypoints
                 List<Waypoint> waypoints = new ArrayList<Waypoint>();
                 while (reader.hasMoreChildren()) {
                     reader.moveDown();
                     if ("wpt".equals(reader.getNodeName())) {
-                       System.out.println("processing wpt node");
+                       //System.out.println("processing wpt node");
                        Waypoint wpt = (Waypoint) context.convertAnother(gpx, Waypoint.class);
                        //System.out.println("WPT: "+ wpt.toString());
                        waypoints.add(wpt);

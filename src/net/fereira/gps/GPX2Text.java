@@ -81,8 +81,10 @@ public class GPX2Text {
 			Groundspeak groundspeak = wpt.getGroundspeak();
 			System.out.println("wpt/groundspeak:name : "+groundspeak.getName());
 			System.out.println("wpt/groundspeak:placed_by : "+groundspeak.getPlaced_by());
-					
+			System.out.println();		
 		}
+		
+		System.out.println();
 		
 		
 	}
