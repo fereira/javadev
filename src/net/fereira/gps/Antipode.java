@@ -1,4 +1,4 @@
-package net.fereira;
+package net.fereira.gps;
 
 import org.apache.commons.lang.StringUtils;
 

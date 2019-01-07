@@ -1,8 +1,6 @@
-package net.fereira;
+package net.fereira.gps;
 
 import java.io.File;
-
-import net.fereira.xml.GpxTransformer;
 
 public class ConvertGPX {
 

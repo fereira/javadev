@@ -1,4 +1,4 @@
-package net.fereira.xml;
+package net.fereira.gps;
 
 import java.io.File;
 import java.io.InputStream;

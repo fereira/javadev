@@ -1,9 +1,9 @@
-package net.fereira.xml;
+package net.fereira.gps;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import net.fereira.bo.Geocache;
+import net.fereira.gps.bo.Groundspeak;
 
 import org.apache.commons.lang.StringUtils;
  
@@ -19,12 +19,12 @@ import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 public class GeocacheConverter implements Converter {
 
         public boolean canConvert(Class clazz) {
-                return clazz.equals(Geocache.class);
+                return clazz.equals(Groundspeak.class);
         }
 
         public void marshal(Object value, HierarchicalStreamWriter writer,
                         MarshallingContext context) {
-                Geocache geocache = (Geocache) value;
+                Groundspeak geocache = (Groundspeak) value;
                 writer.startNode("Geocache"); 
                 writer.startNode("journal");
                 writer.endNode(); // journal
@@ -33,7 +33,7 @@ public class GeocacheConverter implements Converter {
 
         public Object unmarshal(HierarchicalStreamReader reader,
                         UnmarshallingContext context) {
-                Geocache geocache = new Geocache();
+                Groundspeak geocache = new Groundspeak();
                 reader.moveDown(); // move down into Geocache element
                 reader.moveDown(); // move done into Journal element
                 
