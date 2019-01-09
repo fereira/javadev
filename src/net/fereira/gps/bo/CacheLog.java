@@ -1,5 +1,7 @@
 package net.fereira.gps.bo;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("groundspeak:log")
@@ -51,6 +53,11 @@ public class CacheLog {
 
 	public void setText(String text) {
 		this.text = text;
+	}
+	
+	@Override
+	public String toString() {
+	    return ToStringBuilder.reflectionToString(this);
 	}
 
 }

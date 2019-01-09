@@ -1,7 +1,10 @@
 package net.fereira.gps.bo;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
 @XStreamAlias("groundspeak:attribute")
 public class Attribute {
@@ -10,8 +13,8 @@ public class Attribute {
 	private String id;
 	
 	@XStreamAsAttribute
-	private String inc;
-	
+	private String inc; 
+	 
 	private String value;
 
 	public Attribute() {
@@ -40,6 +43,11 @@ public class Attribute {
 
 	public void setValue(String value) {
 		this.value = value;
+	}
+	
+	@Override
+	public String toString() {
+	    return ToStringBuilder.reflectionToString(this);
 	}
 
 }
