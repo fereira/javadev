@@ -11,7 +11,7 @@ Misc/tdbs/
 */support/
 */.classpath
 */.project
-*/.settings
+.settings
 */scripts/*.json
 
 # ignore specific files
