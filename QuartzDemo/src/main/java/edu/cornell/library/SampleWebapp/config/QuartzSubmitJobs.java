@@ -13,9 +13,10 @@ import javax.annotation.PostConstruct;
 import org.quartz.JobDetail; 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
 import org.springframework.scheduling.quartz.JobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
@@ -40,6 +41,7 @@ public class QuartzSubmitJobs {
     }
 
     @Bean(name = "simpleJobDetail")
+    @Primary
     public JobDetailFactoryBean simpleJobDetail() { 
         return QuartzConfig.createJobDetail(SimpleJob.class, "simple Job");
     }
@@ -49,14 +51,14 @@ public class QuartzSubmitJobs {
         return QuartzConfig.createJobDetail(SimpleJob2.class, "simple Job2");
     }
 
-    @Bean(name = "simpleJobTrigger")
-    public SimpleTriggerFactoryBean triggerJob(JobDetail jobDetail) {
+    @Bean 
+    public SimpleTriggerFactoryBean triggerJob(@Qualifier("simpleJobDetail")JobDetail jobDetail) {
         long frequencyMS = everyMinute;
         return QuartzConfig.createTrigger(jobDetail, startNow(), frequencyMS, "Simple Job Trigger");
     }
     
-    @Bean(name = "simpleJobTrigger2")
-    public SimpleTriggerFactoryBean triggerJob2(JobDetail jobDetail) {
+    @Bean
+    public SimpleTriggerFactoryBean triggerJob2(@Qualifier("simpleJobDetail2")JobDetail jobDetail) {
         long frequencyMS = minutesToMilliseconds(5);
         return QuartzConfig.createTrigger(jobDetail, startNow(), frequencyMS, "Simple Job Trigger2");
     }
