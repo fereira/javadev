@@ -21,6 +21,7 @@ import org.springframework.scheduling.quartz.JobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
 
 import edu.cornell.library.SampleWebapp.jobs.SimpleJob;
+import edu.cornell.library.SampleWebapp.jobs.SimpleJob2;
 import edu.cornell.library.SampleWebapp.util.ScheduleUtil; 
 
 @Configuration
@@ -42,6 +43,11 @@ public class QuartzSubmitJobs {
     public JobDetailFactoryBean simpleJobDetail() { 
         return QuartzConfig.createJobDetail(SimpleJob.class, "simple Job");
     }
+    
+    @Bean(name = "simpleJobDetail2")
+    public JobDetailFactoryBean simpleJobDetail2() { 
+        return QuartzConfig.createJobDetail(SimpleJob2.class, "simple Job2");
+    }
 
     @Bean(name = "simpleJobTrigger")
     public SimpleTriggerFactoryBean triggerJob(JobDetail jobDetail) {
@@ -49,9 +55,10 @@ public class QuartzSubmitJobs {
         return QuartzConfig.createTrigger(jobDetail, startNow(), frequencyMS, "Simple Job Trigger");
     }
     
-    @Bean(name = "cronJobTrigger")
-    public CronTriggerFactoryBean triggerCronJob(JobDetail jobDetail) {
-        return QuartzConfig.createCronTrigger(jobDetail, CRON_EVERY_FIVE_MINUTES, "Cron job Trigger");
+    @Bean(name = "simpleJobTrigger2")
+    public SimpleTriggerFactoryBean triggerJob2(JobDetail jobDetail) {
+        long frequencyMS = minutesToMilliseconds(5);
+        return QuartzConfig.createTrigger(jobDetail, startNow(), frequencyMS, "Simple Job Trigger2");
     }
     
     static Date startNow() {
@@ -66,6 +73,18 @@ public class QuartzSubmitJobs {
         LocalDateTime ldt = LocalDateTime.now().withHour(hour).withMinute(minute).withSecond(0).withNano(0);
         ldt = ldt.plusDays(plus);
         return Date.from(ldt.atZone(ZoneId.systemDefault()).toInstant());
+    }
+    
+    static long daysToMilliseconds(int days) {
+        return TimeUnit.DAYS.toMillis(days);    
+    }
+    
+    static long hoursToMilliseconds(int hours) {
+        return TimeUnit.HOURS.toMillis(hours);    
+    }
+    
+    static long minutesToMilliseconds(int minutes) {
+        return TimeUnit.MINUTES.toMillis(minutes);    
     }
     
  

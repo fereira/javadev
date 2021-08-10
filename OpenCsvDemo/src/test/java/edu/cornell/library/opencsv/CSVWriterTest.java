@@ -1,4 +1,4 @@
-package net.fereira.csv;
+package edu.cornell.library.opencsv;
 
 import java.io.FileOutputStream;
 import java.io.FileWriter;
