@@ -24,3 +24,4 @@ application.properties
 *.swp
 *.out
 *.save
+*.log
