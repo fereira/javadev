@@ -71,7 +71,7 @@ public class QuartzConfig {
 
         return schedulerFactory;
     }
-
+    
     static SimpleTriggerFactoryBean createTrigger(JobDetail jobDetail, Date startTime, long pollFrequencyMs, String triggerName) {
         log.debug("createTrigger(jobDetail={}, pollFrequencyMs={}, triggerName={})", jobDetail.toString(), pollFrequencyMs, triggerName);
 
@@ -85,26 +85,7 @@ public class QuartzConfig {
         factoryBean.setMisfireInstruction(SimpleTrigger.MISFIRE_INSTRUCTION_RESCHEDULE_NEXT_WITH_REMAINING_COUNT);
 
         return factoryBean;
-    }
-
-    static CronTriggerFactoryBean createCronTrigger(JobDetail jobDetail, String cronExpression, String triggerName) {
-        log.debug("createCronTrigger(jobDetail={}, cronExpression={}, triggerName={})", jobDetail.toString(), cronExpression, triggerName);
-
-        // To fix a known issue with time-based cron jobs
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.SECOND, 0);
-        calendar.set(Calendar.MILLISECOND, 0);
-
-        CronTriggerFactoryBean factoryBean = new CronTriggerFactoryBean();
-        factoryBean.setJobDetail(jobDetail);
-        factoryBean.setCronExpression(cronExpression);
-        factoryBean.setStartTime(calendar.getTime());
-        factoryBean.setStartDelay(0L);
-        factoryBean.setName(triggerName);
-        factoryBean.setMisfireInstruction(CronTrigger.MISFIRE_INSTRUCTION_DO_NOTHING);
-
-        return factoryBean;
-    }
+    } 
 
     static JobDetailFactoryBean createJobDetail(Class jobClass, String jobName) {
         log.info("createJobDetail(jobClass={}, jobName={})", jobClass.getName(), jobName);

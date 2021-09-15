@@ -20,14 +20,16 @@ public class SimpleJob2 extends QuartzJobBean {
     protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); 
         log.info("SimpleJob2 Started: "+ dtf.format(LocalDateTime.now()));
-        IntStream.range(0, 5).forEach(i -> {
-            log.info("Counting - {}", i);
+        String[] alphanum = {"one", "two", "three", "four", "five"};
+        
+        for (int i=0; i < alphanum.length; i++) {
+            log.info("Counting - {}", alphanum[i]);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 log.error(e.getMessage(), e);
             }
-        });
+        };
         log.info("SimpleJob2 End................");
     }
 }
