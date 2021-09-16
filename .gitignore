@@ -16,6 +16,7 @@ Misc/tdbs/
 
 # ignore specific files
 application.properties
+Lucene2Csv/nalt.csv
 
 ## generic files to ignore
 *~
