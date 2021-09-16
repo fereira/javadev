@@ -15,7 +15,7 @@ public class CSVWriterTest
 {
    public static void main(String[] args) throws Exception
    {
-      String csv = "/cul/src/javadev/data.tsv";
+      String csv = "/cul/src/javadev/OpenCsvDemo/data.tsv";
       FileWriter fwriter = new FileWriter(csv);
       Writer swriter = new StringWriter(); 
        
