@@ -32,14 +32,16 @@ public class QuartzSubmitJobs {
     final long everyMinute = TimeUnit.MINUTES.toMillis(1); 
     final long everyHour = TimeUnit.HOURS.toMillis(1);  
     
-    Logger logger = LoggerFactory.getLogger(getClass());
-    private static final String CRON_EVERY_FIVE_MINUTES = "0 0/5 * ? * * *";
+    Logger logger = LoggerFactory.getLogger(getClass()); 
     
     @PostConstruct
     public void init() {
         logger.info("Hello world from QuartzSubmitJobs...");
     }
 
+    /**
+     *  each jobDetail bean must have a unique "name"
+    */
     @Bean(name = "simpleJobDetail")
     @Primary
     public JobDetailFactoryBean simpleJobDetail() { 
@@ -50,7 +52,11 @@ public class QuartzSubmitJobs {
     public JobDetailFactoryBean simpleJobDetail2() { 
         return QuartzConfig.createJobDetail(SimpleJob2.class, "simple Job2");
     }
-
+    
+    /**
+     * each job needs a distinct trigger.  use the Qualifier annotation with a unique string or you'll get an exception
+    */
+    
     @Bean 
     public SimpleTriggerFactoryBean triggerJob(@Qualifier("simpleJobDetail")JobDetail jobDetail) {
         long frequencyMS = everyMinute;
@@ -69,7 +75,7 @@ public class QuartzSubmitJobs {
     }
     
     /*
-     * set start date time Set plus to 1L to start tomorrow
+     * set start date time Set plus to 1L to start at a specific time tomorrow
      */
     static Date getStartDateTime(int hour, int minute, long plus) {
         LocalDateTime ldt = LocalDateTime.now().withHour(hour).withMinute(minute).withSecond(0).withNano(0);
