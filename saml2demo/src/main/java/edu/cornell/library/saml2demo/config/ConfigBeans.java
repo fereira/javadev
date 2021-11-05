@@ -11,6 +11,8 @@ import java.security.cert.X509Certificate;
 import javax.servlet.http.HttpServletRequest;
 
 import org.opensaml.security.x509.X509Support;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -36,7 +38,8 @@ import org.springframework.stereotype.Component;
  
 @Component
 public class ConfigBeans  { 
-	 
+	
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Value("${spring.security.saml2.entity-id}") 
     private String entityId;
@@ -64,8 +67,8 @@ public class ConfigBeans  {
             System.err.println("Could not open file");
             
         }
-        System.out.println("entityId: "+ entityId);
-        System.out.println("ssoUrl: "+ ssoUrl);
+        logger.debug("entityId: "+ entityId);
+        logger.debug("ssoUrl: "+ ssoUrl);
         
         X509Certificate certificate = X509Support.decodeCertificate(verificationKey);
         Saml2X509Credential credential = Saml2X509Credential.verification(certificate);

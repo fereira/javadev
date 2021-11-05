@@ -3,7 +3,9 @@ package edu.cornell.library.saml2demo.controllers;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
- 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.saml2.provider.service.authentication.Saml2AuthenticatedPrincipal;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import edu.cornell.library.saml2demo.SamlAttributes;
  
 @Controller
 public class HomeController {
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
     
 	@RequestMapping("/")
 	public String index() {

@@ -1,4 +1,7 @@
 # application.properties
+logging.file=myapplication.log
+logging.level.org.springframework.web=ERROR
+
 spring.main.lazy-initialization=true
 
 spring.security.saml2.singlesignon.sign-request=false
