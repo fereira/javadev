@@ -18,6 +18,8 @@ Misc/tdbs/
 application.properties
 Lucene2Csv/nalt.csv
 
+*/src/main/resources/saml-certificate/*
+
 ## generic files to ignore
 *~
 *.lock
