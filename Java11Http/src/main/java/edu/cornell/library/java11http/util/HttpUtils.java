@@ -12,6 +12,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpClient.Version;
 import java.net.http.HttpRequest.BodyPublishers;
+import java.net.http.HttpRequest.Builder;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.net.http.HttpResponse.PushPromiseHandler;
 import java.nio.charset.StandardCharsets;
@@ -19,6 +20,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
@@ -79,6 +81,21 @@ public class HttpUtils {
         logger.info("httpGetRequest status code: " + responseStatusCode);
         return response;
     }
+    
+    public HttpResponse<String> httpCustomGetRequest(String uri, Optional<Map<String, String>> headers) throws URISyntaxException, IOException, InterruptedException {
+        
+       HttpClient client = HttpClient.newHttpClient();
+       Builder builder = requestBuilder(new URI(uri), headers); 
+       HttpRequest request = builder.build(); 
+       HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+
+       String responseBody = response.body();
+       int responseStatusCode = response.statusCode();
+
+       logger.info("httpGetRequest: " + responseBody);
+       logger.info("httpGetRequest status code: " + responseStatusCode);
+       return response;
+   }
 
     public HttpResponse<String> httpPostRequest(String uri, String body) throws URISyntaxException, IOException, InterruptedException {
         HttpClient client = HttpClient.newBuilder()
@@ -120,15 +137,15 @@ public class HttpUtils {
         
         HttpRequest request = HttpRequest.newBuilder()
                 .POST(HttpRequest.BodyPublishers.ofString(json))
-                .uri(URI.create("https://httpbin.org/post"))
-                .setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
+                .uri(URI.create(uri))
+                .setHeader("User-Agent", "Java 11 HttpClient") // add request header
                 .header("Content-Type", "application/json")
                 .build();
 
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
        
         String responseBody = response.body();
-        logger.info("httpPostJsonRequest : " + responseBody);
+        //logger.info("httpPostJsonRequest : " + responseBody);
         return response;
     }
 
@@ -196,5 +213,17 @@ public class HttpUtils {
             builder.append(URLEncoder.encode(entry.getValue().toString(), StandardCharsets.UTF_8));
         }
         return HttpRequest.BodyPublishers.ofString(builder.toString());
+    }
+    
+    protected Builder requestBuilder(URI uri,  Optional<Map<String, String>> additionalHeaders) {
+        
+        Builder builder =  HttpRequest.newBuilder()
+            .uri(uri)
+            .timeout(Duration.ofMinutes(1))
+            .header("Content-Type", "application/json");
+        if (additionalHeaders.isPresent()) {
+          additionalHeaders.get().forEach((k, v) -> builder.header(k, v));
+        }
+        return builder;
     }
 }

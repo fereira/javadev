@@ -16,6 +16,7 @@ Misc/tdbs/
 
 # ignore specific files
 application.properties
+application.yaml
 Lucene2Csv/nalt.csv
 
 */src/main/resources/saml-certificate/*
