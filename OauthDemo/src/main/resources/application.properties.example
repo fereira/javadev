@@ -1,0 +1,7 @@
+# application.properties
+logging.config=classpath:logback-spring.xml
+logging.file.name=/cul/log/javadev/oauthdemo.log
+logging.level.org.springframework.web=ERROR
+
+spring.main.lazy-initialization=true
+
