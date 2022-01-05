@@ -18,11 +18,13 @@ import org.springframework.security.oauth2.client.web.reactive.function.client.S
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.OAuth2Error;
 import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
+@Component
 public class ConfigBeans {
 
-protected final Logger logger = LoggerFactory.getLogger(getClass()); 
+    protected final Logger logger = LoggerFactory.getLogger(getClass()); 
     
     @Bean
     public WebClient rest(ClientRegistrationRepository clients, OAuth2AuthorizedClientRepository authz) {
