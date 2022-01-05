@@ -13,13 +13,14 @@ import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
-import org.json.JSONObject; 
+import org.apache.http.util.EntityUtils; 
+import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ApiService {
 	
-	private static final Logger logger = Logger.getLogger(ApiService.class);
+	private static final Logger logger = LoggerFactory.getLogger(ApiService.class);
 	private String tenant;
 
 	public String getTenant() {
@@ -51,8 +52,7 @@ public class ApiService {
 		int responseCode = response.getStatusLine().getStatusCode();
 
 		logger.debug("GET:");
-		logger.debug(url);
-		logger.debug(responseCode);
+		logger.debug(url); 
 		logger.debug(responseString);
 
 		if (responseCode > 399) {
@@ -89,8 +89,7 @@ public class ApiService {
 
 		logger.debug("POST:");
 		logger.debug(body.toString());
-		logger.debug(url);
-		logger.debug(responseCode);
+		logger.debug(url); 
 		logger.debug(responseString);
 
 		if (responseCode > 399) {
@@ -130,8 +129,7 @@ public class ApiService {
 
 		logger.debug("PUT:");
 		logger.debug(body.toString());
-		logger.debug(url);
-		logger.debug(responseCode);
+		logger.debug(url); 
 
 		if (responseCode > 399) {
 			logger.error("Failed PUT");
@@ -171,8 +169,7 @@ public class ApiService {
 
 			logger.debug("POST:");
 			logger.debug(body.toString());
-			logger.debug(url);
-			logger.debug(responseCode);
+			logger.debug(url); 
 			logger.debug(responseString);
 
 			if (responseCode > 399) {

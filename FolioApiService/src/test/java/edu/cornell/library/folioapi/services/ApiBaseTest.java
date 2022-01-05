@@ -6,6 +6,8 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.lang3.StringUtils;
 
 import org.json.JSONObject;
+import org.junit.jupiter.api.Test;
+
 import edu.cornell.library.folioapi.services.ApiService;
 
 
@@ -111,6 +113,12 @@ public class ApiBaseTest {
 			e.printStackTrace();
 		} 
 		
+	}
+	
+	@Test
+	public void initTest() {
+	    init();
+	    System.out.println("Token: "+ this.token);
 	}
 	
 	
