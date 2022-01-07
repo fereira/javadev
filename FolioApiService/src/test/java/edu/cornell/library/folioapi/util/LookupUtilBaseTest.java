@@ -19,6 +19,7 @@ public class LookupUtilBaseTest {
 	private String baseOkapEndpoint;
     private String token; 
     private ApiService apiService;
+    protected final String MAXLIMIT = "2147483647";
     
     	
 	public LookupUtil getUtil() {

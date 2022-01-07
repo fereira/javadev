@@ -195,6 +195,288 @@ public class LookupUtil {
         return (HashMap<String, String>) table;
     }
     
+    public HashMap<String, String> getClassificationTypes(String endpoint, String token)
+            throws IOException, InterruptedException, Exception {
+
+        Map<String, String> table = new HashMap<String, String>();
+
+        logger.trace("calling " + endpoint);
+        String response = getResponse(endpoint, token);
+
+        JSONObject jsonObject = new JSONObject(response);
+        String elementName = "classificationTypes";
+
+        JSONArray elements = jsonObject.getJSONArray(elementName);
+        Iterator elementsIterator = elements.iterator();
+        while (elementsIterator.hasNext()) {
+            JSONObject element = (JSONObject) elementsIterator.next();
+            String id = element.getString("id");
+            String name = element.getString("name");
+            table.put(name, id);
+        }
+
+        logger.trace("finished loading classification lookup table");
+
+        return (HashMap<String, String>) table;
+    }
+    
+    public HashMap<String, String> getContributorNameTypes(String endpoint, String token)
+            throws IOException, InterruptedException, Exception {
+
+        Map<String, String> table = new HashMap<String, String>();
+
+        logger.trace("calling " + endpoint);
+        String response = getResponse(endpoint, token);
+
+        JSONObject jsonObject = new JSONObject(response);
+        String elementName = "contributorNameTypes";
+
+        JSONArray elements = jsonObject.getJSONArray(elementName);
+        Iterator elementsIterator = elements.iterator();
+        while (elementsIterator.hasNext()) {
+            JSONObject element = (JSONObject) elementsIterator.next();
+            String id = element.getString("id");
+            String name = element.getString("name");
+            table.put(name, id);
+        }
+
+        logger.trace("finished loading contributor name types lookup table");
+
+        return (HashMap<String, String>) table;
+    }
+    
+    public HashMap<String, String> getContributorTypes(String endpoint, String token)
+            throws IOException, InterruptedException, Exception {
+
+        Map<String, String> table = new HashMap<String, String>();
+
+        logger.trace("calling " + endpoint);
+        String response = getResponse(endpoint, token);
+
+        JSONObject jsonObject = new JSONObject(response);
+        String elementName = "contributorTypes";
+
+        JSONArray elements = jsonObject.getJSONArray(elementName);
+        Iterator elementsIterator = elements.iterator();
+        while (elementsIterator.hasNext()) {
+            JSONObject element = (JSONObject) elementsIterator.next();
+            String id = element.getString("id");
+            String name = element.getString("name");
+            table.put(name, id);
+        }
+
+        logger.trace("finished loading contributor types lookup table");
+
+        return (HashMap<String, String>) table;
+    }
+    
+    public HashMap<String, String> getFundCodes(String endpoint, String token)
+            throws IOException, InterruptedException, Exception {
+
+        Map<String, String> table = new HashMap<String, String>();
+
+        logger.trace("calling " + endpoint);
+        String response = getResponse(endpoint, token);
+
+        JSONObject jsonObject = new JSONObject(response);
+        //System.out.println(jsonObject.toString(3));
+        String elementName = "funds";
+
+        JSONArray elements = jsonObject.getJSONArray(elementName);
+        Iterator elementsIterator = elements.iterator();
+        while (elementsIterator.hasNext()) {
+            JSONObject element = (JSONObject) elementsIterator.next();
+            String id = element.getString("id");
+            String name = element.getString("name");
+            table.put(name, id);
+        }
+
+        logger.trace("finished loading fundCodes lookup table");
+
+        return (HashMap<String, String>) table;
+    }
+    
+    public HashMap<String, String> getInstanceTypes(String endpoint, String token)
+            throws IOException, InterruptedException, Exception {
+
+        Map<String, String> table = new HashMap<String, String>();
+
+        logger.trace("calling " + endpoint);
+        String response = getResponse(endpoint, token);
+
+        JSONObject jsonObject = new JSONObject(response);
+        // System.out.println(jsonObject.toString(3));
+        String elementName = "instanceTypes";
+
+        JSONArray elements = jsonObject.getJSONArray(elementName);
+        Iterator elementsIterator = elements.iterator();
+        while (elementsIterator.hasNext()) {
+            JSONObject element = (JSONObject) elementsIterator.next();
+            String id = element.getString("id");
+            String name = element.getString("name");
+            table.put(name, id);
+        }
+
+        logger.trace("finished loading instance types lookup table");
+
+        return (HashMap<String, String>) table;
+    }
+    
+    
+    
+    public HashMap<String, String> getIdentifierTypes(String endpoint, String token)
+            throws IOException, InterruptedException, Exception {
+
+        Map<String, String> table = new HashMap<String, String>();
+
+        logger.trace("calling " + endpoint);
+        String response = getResponse(endpoint, token);
+
+        JSONObject jsonObject = new JSONObject(response);
+        String elementName = "identifierTypes";
+
+        JSONArray elements = jsonObject.getJSONArray(elementName);
+        Iterator elementsIterator = elements.iterator();
+        while (elementsIterator.hasNext()) {
+            JSONObject element = (JSONObject) elementsIterator.next();
+            String id = element.getString("id");
+            String name = element.getString("name");
+            table.put(name, id);
+        }
+
+        logger.trace("finished loading identifierTypes lookup table");
+
+        return (HashMap<String, String>) table;
+    }
+    
+    public HashMap<String, String> getLocations(String endpoint, String token)
+            throws IOException, InterruptedException, Exception {
+
+        Map<String, String> table = new HashMap<String, String>();
+
+        logger.trace("calling " + endpoint);
+        String response = getResponse(endpoint, token);
+
+        JSONObject jsonObject = new JSONObject(response);
+        String elementName = "locations";
+
+        JSONArray elements = jsonObject.getJSONArray(elementName);
+        Iterator elementsIterator = elements.iterator();
+        while (elementsIterator.hasNext()) {
+            JSONObject element = (JSONObject) elementsIterator.next();
+            String id = element.getString("id"); 
+            String code = element.getString("code");
+            String name = code + "-location";
+            table.put(name, id);
+        }
+        logger.trace("finished loading locations lookup table");
+
+        return (HashMap<String, String>) table;
+    }
+    
+    public HashMap<String, String> getLoanTypes(String endpoint, String token)
+            throws IOException, InterruptedException, Exception {
+
+        Map<String, String> table = new HashMap<String, String>();
+
+        logger.trace("calling " + endpoint);
+        String response = getResponse(endpoint, token);
+
+        JSONObject jsonObject = new JSONObject(response);
+        //System.out.println(jsonObject.toString(3));
+        String elementName = "loantypes";
+
+        JSONArray elements = jsonObject.getJSONArray(elementName);
+        Iterator elementsIterator = elements.iterator();
+        while (elementsIterator.hasNext()) {
+            JSONObject element = (JSONObject) elementsIterator.next();
+            String id = element.getString("id");
+            String name = element.getString("name");
+            table.put(name, id);
+        }
+
+        logger.trace("finished loading  loan Types lookup table");
+
+        return (HashMap<String, String>) table;
+    }
+    
+    public HashMap<String, String> getNoteTypes(String endpoint, String token)
+            throws IOException, InterruptedException, Exception {
+
+        Map<String, String> table = new HashMap<String, String>();
+
+        logger.trace("calling " + endpoint);
+        String response = getResponse(endpoint, token);
+
+        JSONObject jsonObject = new JSONObject(response);
+        //System.out.println(jsonObject.toString(3));
+        String elementName = "noteTypes";
+
+        JSONArray elements = jsonObject.getJSONArray(elementName);
+        Iterator elementsIterator = elements.iterator();
+        while (elementsIterator.hasNext()) {
+            JSONObject element = (JSONObject) elementsIterator.next();
+            String id = element.getString("id");
+            String name = element.getString("name");
+            table.put(name, id);
+        }
+
+        logger.trace("finished loading  note Types lookup table");
+
+        return (HashMap<String, String>) table;
+    }
+    
+    public HashMap<String, String> getHoldingsTypes(String endpoint, String token)
+            throws IOException, InterruptedException, Exception {
+
+        Map<String, String> table = new HashMap<String, String>();
+
+        logger.trace("calling " + endpoint);
+        String response = getResponse(endpoint, token);
+
+        JSONObject jsonObject = new JSONObject(response);
+        //System.out.println(jsonObject.toString(3));
+        String elementName = "holdingsTypes";
+
+        JSONArray elements = jsonObject.getJSONArray(elementName);
+        Iterator elementsIterator = elements.iterator();
+        while (elementsIterator.hasNext()) {
+            JSONObject element = (JSONObject) elementsIterator.next();
+            String id = element.getString("id");
+            String name = element.getString("name");
+            table.put(name, id);
+        }
+
+        logger.trace("finished loading  holding Types lookup table");
+
+        return (HashMap<String, String>) table;
+    }
+    
+    public HashMap<String, String> getMaterialTypes(String endpoint, String token)
+            throws IOException, InterruptedException, Exception {
+
+        Map<String, String> table = new HashMap<String, String>();
+
+        logger.trace("calling " + endpoint);
+        String response = getResponse(endpoint, token);
+
+        JSONObject jsonObject = new JSONObject(response);
+        String elementName = "mtypes";
+
+        JSONArray elements = jsonObject.getJSONArray(elementName);
+        Iterator elementsIterator = elements.iterator();
+        while (elementsIterator.hasNext()) {
+            JSONObject element = (JSONObject) elementsIterator.next();
+            String id = element.getString("id");
+            String name = element.getString("name");
+            table.put(name, id);
+        }
+
+        logger.trace("finished loading materialTypes lookup table");
+
+        return (HashMap<String, String>) table;
+    }
+    
     /**
      * @param endpoint
      * @param token
