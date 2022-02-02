@@ -3,4 +3,4 @@
 BUILD_DIR=/cul/src/javadev
 export CLASSPATH=$BUILD_DIR/bin/:$BUILD_DIR/lib/*
 # echo $CLASSPATH
-java -classpath $CLASSPATH net.fereira.gps.Waypoints2Xml $*
+java -classpath $CLASSPATH edu.cornell.library.misc.gps.Waypoints2Xml $*

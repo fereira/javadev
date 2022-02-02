@@ -4,4 +4,4 @@ LIB=../lib
 OPTS=
 CLASSPATH=$(JARS=("$LIB"/*.jar); IFS=:; echo "${JARS[*]}")
 CLASSPATH=$CLASSES:$CLASSPATH
-java $OPTS -classpath $CLASSPATH net.fereira.orcid.GetOrcidXml
+java $OPTS -classpath $CLASSPATH edu.cornell.library.misc.orcid.GetOrcidXml
