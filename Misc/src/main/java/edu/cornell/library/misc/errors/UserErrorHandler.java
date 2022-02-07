@@ -15,17 +15,7 @@ import java.util.regex.Pattern;
 /**
  * The error handler that should be used when creation of a user fails.
  */
-public class UserErrorHandler implements ErrorHandler {
-
-    private Pattern pattern = Pattern.compile("/api/v1/accounts/\\d+/users");
-
-    @Override
-    public boolean shouldHandle(HttpRequest httpRequest, HttpResponse httpResponse) {
-        return
-                pattern.matcher(httpRequest.getRequestLine().getUri()).find() &&
-                httpResponse.getStatusLine().getStatusCode() == 400 &&
-                httpResponse.getEntity().getContentType().getValue().contains("application/json");
-    }
+public class UserErrorHandler implements ErrorHandler { 
 
     @Override
     public void handle(HttpRequest httpRequest, HttpResponse httpResponse) {

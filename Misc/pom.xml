@@ -20,6 +20,78 @@
 		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 
+		<commons-beanutils.version>1.9.4</commons-beanutils.version>
+		<commons-io.version>2.11.0</commons-io.version>
+		<commons-lang.version>2.6</commons-lang.version>
+		<commons-logging.version>1.2</commons-logging.version>
+		<commons-lang3.version>3.12.0</commons-lang3.version>
+		<commons-text.version>1.9</commons-text.version>
+		<commons-collections4.version>4.4</commons-collections4.version>
+		<commons-compress.version>1.21</commons-compress.version>
+		<commons-codec.version>1.14</commons-codec.version>
+		<commons-csv.version>1.9.0</commons-csv.version>
+		<commons-cli.version>1.5.0</commons-cli.version>
+		<commons-fileupload.version>1.4</commons-fileupload.version>
+		<commons-configuration.version>1.10</commons-configuration.version>
+
+		<!-- json -->
+		<gson.version>2.8.9</gson.version>
+		<jackson.version>2.13.1</jackson.version>
+		<json.version>20211205</json.version>
+		<json-simple.version>1.1.1</json-simple.version>
+
+		<!-- http client -->
+		<httpasyncclient.version>4.1.5</httpasyncclient.version>
+		<httpclient.version>4.5.13</httpclient.version>
+		<httpcore.version>4.4.15</httpcore.version>
+
+		<!-- logging -->
+		<slf4j.version>1.7.35</slf4j.version>
+		<logback.version>1.2.6</logback.version>
+		<log4j2.version>2.17.1</log4j2.version>
+
+		<!-- lucene and solr -->
+		<lucene.version>8.9.0</lucene.version>
+		<solr.version>8.9.0</solr.version>
+		<elasticsearch.version>7.15.0</elasticsearch.version>
+
+		<!-- jena -->
+		<jena-core.version>2.10.0</jena-core.version>
+		<jena-arq.version>2.10.0</jena-arq.version>
+		<jena-iri.version>0.9.6</jena-iri.version>
+		<jena-sdb.version>1.3.6</jena-sdb.version>
+		<jena-tdb.version>0.10.0</jena-tdb.version>
+
+		<jersey-client.version>3.0.3</jersey-client.version>
+		<jersey-core.version>1.19.4</jersey-core.version>
+
+		<jcraft.version>0.1.55</jcraft.version>
+		<jaxb-bind.version>2.4.0-b180830.0359</jaxb-bind.version>
+		<saxon.version>10.6</saxon.version>
+		<htmlparser.version>2.1</htmlparser.version>
+		<jsr311-api.version>1.1.1</jsr311-api.version>
+		<jxl.version>2.6</jxl.version>
+		<juniversalchardet.version>1.0.3</juniversalchardet.version>
+		<marmotta.version>3.4.0</marmotta.version>
+		<poi.version>5.0.0</poi.version>
+		<noggit.version>0.8</noggit.version>
+		<oaicat.version>1.5.48</oaicat.version>
+		<oclc-harvester2.version>0.1.12</oclc-harvester2.version>
+		<opencsv.version>5.5.2</opencsv.version>
+		<xalan.version>2.7.2</xalan.version>
+		<xerces.version>2.12.2</xerces.version>
+		<sesame.version>4.1.2</sesame.version>
+		<xstream.version>1.4.19</xstream.version>
+		<fcrepo-java-client.version>6.1.0</fcrepo-java-client.version>
+		<marc4j.version>2.9.1</marc4j.version>
+		<itextpdf.version>5.5.10</itextpdf.version>
+		<org.restlet.version>2.3.11</org.restlet.version>
+
+		<jquery.version>3.4.1</jquery.version>
+		<bootstrap.version>4.3.1</bootstrap.version>
+		<webjars.version>2.1.0</webjars.version>
+
+		<!-- testing -->
 		<!-- this property can be removed once we update Mockito version in the main pom.xml -->
 		<mockito.version>3.4.0</mockito.version>
 		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
@@ -34,35 +106,23 @@
 		<mockito.version>3.3.0</mockito.version>
 		<byte-buddy.version>1.11.20</byte-buddy.version>
 
-		<commons-beanutils.version>1.9.4</commons-beanutils.version>
-		
-		<commons-io.version>2.11.0</commons-io.version>
-		<commons-lang.version>2.6</commons-lang.version>
-		<commons-logging.version>1.2</commons-logging.version>
-		<commons-lang3.version>3.12.0</commons-lang3.version>
-
-		<commons-text.version>1.9</commons-text.version>
-		<commons-cli.version>1.5.0</commons-cli.version>
-		<commons-fileupload.version>1.4</commons-fileupload.version>
-
-		<gson.version>2.8.9</gson.version>
-		<jackson.version>2.13.1</jackson.version>
-		<httpcomponents.version>2.13.0</httpcomponents.version>
-
-		<!-- logging -->
-		<slf4j.version>1.7.35</slf4j.version>
-		<logback.version>1.2.6</logback.version>
-		<log4j2.version>2.17.1</log4j2.version>
-
-		<jaxb-bind.version>2.4.0-b180830.0359</jaxb-bind.version>
-		<saxon.version>10.6</saxon.version>
-
-		<lucene.version>8.9.0</lucene.version>
-		<solr.version>8.9.0</solr.version>
-
-		<elasticsearch.version>7.14.0</elasticsearch.version>
 		<skipTests>true</skipTests>
 	</properties>
+
+	<repositories>
+
+		<repository>
+			<id>restlet</id>
+			<name>Maven Restlet</name>
+			<url>http://maven.restlet.com//</url>
+		</repository>
+
+		<repository>
+			<id>spring-repo</id>
+			<name>Spring  Repository</name>
+			<url>https://repo.spring.io/plugins-release/</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 
@@ -71,11 +131,11 @@
 			<artifactId>commons-cli</artifactId>
 			<version>${commons-cli.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.11.0</version>
+			<version>${commons-io.version}</version>
 		</dependency>
 
 
@@ -84,43 +144,43 @@
 			<artifactId>commons-logging</artifactId>
 			<version>${commons-logging.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 			<version>${log4j2.version}</version>
 		</dependency>
-		 
+
 
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>${commons-lang3.version}</version>
 		</dependency>
-		
+
 		<dependency>
 
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-text</artifactId>
 			<version>${commons-text.version}</version>
-		</dependency>		
-       
+		</dependency>
+
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-collections4</artifactId>
-			<version>4.4</version>
+			<version>${commons-collections4.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-compress</artifactId>
-			<version>1.21</version>
+			<version>${commons-compress.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-csv</artifactId>
-			<version>1.9.0</version>
+			<version>${commons-csv.version}</version>
 		</dependency>
 
 		<dependency>
@@ -150,49 +210,49 @@
 		<dependency>
 			<groupId>org.htmlparser</groupId>
 			<artifactId>htmlparser</artifactId>
-			<version>2.1</version>
+			<version>${htmlparser.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpasyncclient</artifactId>
-			<version>4.1.5</version>
+			<version>${httpasyncclient.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpasyncclient-cache</artifactId>
-			<version>4.1.5</version>
+			<version>${httpasyncclient.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-			<version>4.5.13</version>
+			<version>${httpclient.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient-cache</artifactId>
-			<version>4.5.13</version>
+			<version>${httpclient.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpcore</artifactId>
-			<version>4.4.15</version>
+			<version>${httpcore.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpcore-nio</artifactId>
-			<version>4.4.15</version>
+			<version>${httpcore.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpmime</artifactId>
-			<version>4.5.13</version>
+			<version>${httpclient.version}</version>
 		</dependency>
 
 		<dependency>
@@ -200,7 +260,7 @@
 			<artifactId>jackson-core</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
@@ -213,12 +273,12 @@
 			<version>${jackson.version}</version>
 		</dependency>
 
-                <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
-                <dependency>
-                    <groupId>javax.xml.bind</groupId>
-                    <artifactId>jaxb-api</artifactId>
-                    <version>${jaxb-bind.version}</version>
-                </dependency>
+		<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>${jaxb-bind.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.jbibtex</groupId>
@@ -229,115 +289,115 @@
 		<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>jena-core</artifactId>
-			<version>2.10.1</version>
+			<version>${jena-core.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>jena-arq</artifactId>
-			<version>2.10.1</version>
+			<version>${jena-arq.version}</version>
 		</dependency>
 
-                <dependency>
-                    <groupId>org.apache.jena</groupId>
-                    <artifactId>jena-iri</artifactId>
-                    <version>0.9.6</version>
-                </dependency>
+		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>jena-iri</artifactId>
+			<version>${jena-iri.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>jena-sdb</artifactId>
-			<version>1.3.6</version>
+			<version>${jena-sdb.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>jena-tdb</artifactId>
-			<version>0.10.1</version>
+			<version>${jena-tdb.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-client</artifactId>
-			<version>3.0.3</version>
+			<version>${jersey-client.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-core</artifactId>
-			<version>1.19.4</version>
+			<version>${jersey-core.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.jcraft</groupId>
 			<artifactId>jsch</artifactId>
-			<version>0.1.55</version>
+			<version>${jcraft.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20211205</version>
+			<version>${json.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
-			<version>1.1.1</version>
+			<version>${json-simple.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>jsr311-api</artifactId>
-			<version>1.1.1</version>
+			<version>${jsr311-api.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.googlecode.juniversalchardet</groupId>
 			<artifactId>juniversalchardet</artifactId>
-			<version>1.0.3</version>
+			<version>${juniversalchardet.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>net.sourceforge.jexcelapi</groupId>
 			<artifactId>jxl</artifactId>
-			<version>2.6</version>
+			<version>${jxl.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.marmotta</groupId>
 			<artifactId>ldclient-api</artifactId>
-			<version>3.4.0</version>
+			<version>${marmotta.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.marmotta</groupId>
 			<artifactId>ldclient-core</artifactId>
-			<version>3.4.0</version>
+			<version>${marmotta.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.marmotta</groupId>
 			<artifactId>marmotta-client-java</artifactId>
-			<version>3.4.0</version>
+			<version>${marmotta.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.marmotta</groupId>
 			<artifactId>marmotta-core</artifactId>
-			<version>3.4.0</version>
+			<version>${marmotta.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.marmotta</groupId>
 			<artifactId>ldpath-api</artifactId>
-			<version>3.4.0</version>
+			<version>${marmotta.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.marmotta</groupId>
 			<artifactId>ldpath-core</artifactId>
-			<version>3.4.0</version>
+			<version>${marmotta.version}</version>
 		</dependency>
 
 		<dependency>
@@ -349,13 +409,13 @@
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-core</artifactId>
-                        <version>${lucene.version}</version>
+			<version>${lucene.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-queryparser</artifactId>
-                        <version>${lucene.version}</version>
+			<version>${lucene.version}</version>
 		</dependency>
 
 		<dependency>
@@ -373,13 +433,13 @@
 		<dependency>
 			<groupId>org.noggit</groupId>
 			<artifactId>noggit</artifactId>
-			<version>0.8</version>
+			<version>${noggit.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.dspace</groupId>
 			<artifactId>oaicat</artifactId>
-			<version>1.5.48</version>
+			<version>${oaicat.version}</version>
 		</dependency>
 
 		<dependency>
@@ -391,69 +451,63 @@
 		<dependency>
 			<groupId>com.opencsv</groupId>
 			<artifactId>opencsv</artifactId>
-			<version>5.5.2</version>
+			<version>${opencsv.version}</version>
 		</dependency>
-<!--
-		<dependency>
-			<groupId>org.restlet.jee</groupId>
-			<artifactId>org.restlet</artifactId>
-			<version>2.3.0</version>
-		</dependency>
--->
+
 		<dependency>
 			<groupId>xalan</groupId>
 			<artifactId>xalan</artifactId>
-			<version>2.7.2</version>
+			<version>${xalan.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>xalan</groupId>
 			<artifactId>serializer</artifactId>
-			<version>2.7.2</version>
+			<version>${xalan.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>xerces</groupId>
 			<artifactId>xercesImpl</artifactId>
-			<version>2.12.2</version>
+			<version>${xerces.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.openrdf.sesame</groupId>
 			<artifactId>sesame-model</artifactId>
-			<version>4.1.2</version>
+			<version>${sesame.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.openrdf.sesame</groupId>
 			<artifactId>sesame-query</artifactId>
-			<version>4.1.2</version>
+			<version>${sesame.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.openrdf.sesame</groupId>
 			<artifactId>sesame-queryresultio-api</artifactId>
-			<version>4.1.2</version>
+			<version>${sesame.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.openrdf.sesame</groupId>
 			<artifactId>sesame-rio-api</artifactId>
-			<version>4.1.2</version>
+			<version>${sesame.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.openrdf.sesame</groupId>
 			<artifactId>sesame-util</artifactId>
-			<version>4.1.2</version>
+			<version>${sesame.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
 			<artifactId>xstream</artifactId>
-			<version>1.4.19</version>
+			<version>${xstream.version}</version>
 		</dependency>
-		
+
 		<!--
 		<dependency>
 			<groupId>classifier4j</groupId>
@@ -461,6 +515,7 @@
 			<version>0.6</version>
 		</dependency>
         -->
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -474,7 +529,13 @@
 			<type>pom</type>
 		</dependency>
 
-                <!-- libraries not in maven repo copied to local repo -->
+		<dependency>
+			<groupId>org.restlet.jee</groupId>
+			<artifactId>org.restlet</artifactId>
+			<version>${org.restlet.version}</version>
+		</dependency>
+
+		<!-- libraries not in maven repo copied to local repo -->
 		<dependency>
 			<groupId>edu.cornell.library.misc</groupId>
 			<artifactId>orcid-java-client</artifactId>
@@ -497,8 +558,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
-					<source>${java.version}</source>  <!-- same as <java.version> -->
-					<target>${java.version}</target>	<!-- same as <java.version> -->
+					<source>${java.version}</source> <!-- same as <java.version> -->
+					<target>${java.version}</target> <!-- same as <java.version> -->
 				</configuration>
 			</plugin>
 

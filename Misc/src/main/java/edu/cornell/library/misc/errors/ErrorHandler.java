@@ -6,9 +6,8 @@ import org.apache.http.HttpResponse;
 /**
  * This allows additional specific behaviour for handling errors.
  */
-public interface ErrorHandler {
-
-    boolean shouldHandle(HttpRequest httpRequest, HttpResponse httpResponse);
+public interface ErrorHandler { 
 
     void handle(HttpRequest httpRequest, HttpResponse httpResponse);
+    
 }

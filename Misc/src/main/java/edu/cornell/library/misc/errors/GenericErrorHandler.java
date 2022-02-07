@@ -13,21 +13,9 @@ import java.io.IOException;
 import java.util.regex.Pattern;
 
 /**
- * The error handler that should be used when creation of a Canvas object fails.
+ * The error handler that should be used when creation of an object fails.
  */
-public class GenericErrorHandler implements ErrorHandler {
-
-    private Pattern coursePattern = Pattern.compile("/api/v1/accounts/(\\d+|\\w+:\\w+)/courses");
-    private Pattern loginPattern = Pattern.compile("/api/v1/accounts/\\d+/logins");
-
-    @Override
-    public boolean shouldHandle(HttpRequest httpRequest, HttpResponse httpResponse) {
-        return (coursePattern.matcher(httpRequest.getRequestLine().getUri()).find() ||
-                loginPattern.matcher(httpRequest.getRequestLine().getUri()).find()) &&
-                httpResponse.getStatusLine().getStatusCode() == 400 &&
-                httpResponse.getEntity().getContentType().getValue().contains("application/json");
-    }
-
+public class GenericErrorHandler implements ErrorHandler { 
     @Override
     public void handle(HttpRequest httpRequest, HttpResponse httpResponse) {
         Gson gson = GsonResponseParser.getDefaultGsonParser(false);

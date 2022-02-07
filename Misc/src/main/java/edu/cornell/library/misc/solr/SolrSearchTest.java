@@ -27,7 +27,7 @@ import org.xml.sax.SAXException;
 public class SolrSearchTest {
 	
 	//private static String solrHome = "/usr/local/solr";
-	private static String solrServerUrl = "http://teealdev-solr.library.cornell.edu/solr/aki";
+	private static String solrServerUrl = "http://localhost:8983/solr/collection1";
     //private static String serviceURL = "http://jaf30-dev-new.library.cornell.edu:8080/vitrosolr";
     
 	/**
@@ -44,7 +44,7 @@ public class SolrSearchTest {
 	    //File f = new File( home, "solr.xml" );
 		 
 		
-	    String query = new String("GHANA ENVIRONMENT");
+	    String query = new String("*");
 	    this.search( query);
 	}
 	

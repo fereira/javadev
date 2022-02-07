@@ -1,7 +1,7 @@
 package edu.cornell.library.misc.exception;
 
 /**
- * Thrown if Canvas returns a 404 response.
+ * Thrown if Request returns a 404 response.
  */
 public class ObjectNotFoundException extends AppException {
     private static final long serialVersionUID = 1L;
@@ -10,7 +10,7 @@ public class ObjectNotFoundException extends AppException {
         super();
     }
 
-    public ObjectNotFoundException(String canvasErrorString, String url) {
-        super(canvasErrorString, url);
+    public ObjectNotFoundException(String errorString, String url) {
+        super(errorString, url);
     }
 }
