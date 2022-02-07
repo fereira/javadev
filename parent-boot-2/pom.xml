@@ -10,8 +10,110 @@
     <description>Parent for all Spring Boot 2 modules</description>
     <groupId>edu.cornell.library</groupId>
 
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- plugins -->
+		<thin.version>1.0.22.RELEASE</thin.version>
+		<spring-boot.version>2.5.4</spring-boot.version>
+		<aspectjweaver.version>1.9.1</aspectjweaver.version>
+		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+
+		<commons-beanutils.version>1.9.4</commons-beanutils.version>
+		<commons-io.version>2.11.0</commons-io.version>
+		<commons-lang.version>2.6</commons-lang.version>
+		<commons-logging.version>1.2</commons-logging.version>
+		<commons-lang3.version>3.12.0</commons-lang3.version>
+		<commons-text.version>1.9</commons-text.version>
+		<commons-collections4.version>4.4</commons-collections4.version>
+		<commons-compress.version>1.21</commons-compress.version>
+		<commons-codec.version>1.14</commons-codec.version>
+		<commons-csv.version>1.9.0</commons-csv.version>
+		<commons-cli.version>1.5.0</commons-cli.version>
+		<commons-fileupload.version>1.4</commons-fileupload.version>
+		<commons-configuration.version>1.10</commons-configuration.version>
+
+		<!-- json -->
+		<gson.version>2.8.9</gson.version>
+		<jackson.version>2.13.1</jackson.version>
+		<json.version>20211205</json.version>
+		<json-simple.version>1.1.1</json-simple.version>
+
+		<!-- http client -->
+		<httpasyncclient.version>4.1.5</httpasyncclient.version>
+		<httpclient.version>4.5.13</httpclient.version>
+		<httpcore.version>4.4.15</httpcore.version>
+
+		<!-- logging -->
+		<slf4j.version>1.7.35</slf4j.version>
+		<logback.version>1.2.6</logback.version>
+		<log4j2.version>2.17.1</log4j2.version>
+
+		<!-- lucene and solr -->
+		<lucene.version>8.9.0</lucene.version>
+		<solr.version>8.9.0</solr.version>
+		<elasticsearch.version>7.15.0</elasticsearch.version>
+
+		<!-- jena -->
+		<jena-core.version>2.10.0</jena-core.version>
+		<jena-arq.version>2.10.0</jena-arq.version>
+		<jena-iri.version>0.9.6</jena-iri.version>
+		<jena-sdb.version>1.3.6</jena-sdb.version>
+		<jena-tdb.version>0.10.0</jena-tdb.version>
+
+		<jersey-client.version>3.0.3</jersey-client.version>
+		<jersey-core.version>1.19.4</jersey-core.version>
+
+		<jcraft.version>0.1.55</jcraft.version>
+		<jaxb-bind.version>2.4.0-b180830.0359</jaxb-bind.version>
+		<saxon.version>10.6</saxon.version>
+		<htmlparser.version>2.1</htmlparser.version>
+		<jsr311-api.version>1.1.1</jsr311-api.version>
+		<jxl.version>2.6</jxl.version>
+		<juniversalchardet.version>1.0.3</juniversalchardet.version>
+		<marmotta.version>3.4.0</marmotta.version>
+		<poi.version>5.0.0</poi.version>
+		<noggit.version>0.8</noggit.version>
+		<oaicat.version>1.5.48</oaicat.version>
+		<oclc-harvester2.version>0.1.12</oclc-harvester2.version>
+		<opencsv.version>5.5.2</opencsv.version>
+		<xalan.version>2.7.2</xalan.version>
+		<xerces.version>2.12.2</xerces.version>
+		<sesame.version>4.1.2</sesame.version>
+		<xstream.version>1.4.19</xstream.version>
+		<fcrepo-java-client.version>6.1.0</fcrepo-java-client.version>
+		<marc4j.version>2.9.1</marc4j.version>
+		<itextpdf.version>5.5.10</itextpdf.version>
+		<org.restlet.version>2.3.11</org.restlet.version>
+                <rest-assured.version>3.3.0</rest-assured.version>
+
+		<jquery.version>3.4.1</jquery.version>
+		<bootstrap.version>4.3.1</bootstrap.version>
+		<webjars.version>2.1.0</webjars.version>
+
+		<!-- testing -->
+		<!-- this property can be removed once we update Mockito version in the main pom.xml -->
+		<mockito.version>3.4.0</mockito.version>
+		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+
+		<junit-platform.version>1.8.1</junit-platform.version>
+		<junit-jupiter.version>5.8.1</junit-jupiter.version>
+		<junit-platform-surefire-provider.version>1.3.2</junit-platform-surefire-provider.version>
+		<junit.version>4.13.2</junit.version>
+		<hamcrest.version>2.2</hamcrest.version>
+		<hamcrest-all.version>1.3</hamcrest-all.version>
+		<mockito.version>3.3.0</mockito.version>
+		<byte-buddy.version>1.11.20</byte-buddy.version>
+
+		<skipTests>true</skipTests>
+	</properties>
+
+
     <dependencyManagement>
         <dependencies>
+
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
@@ -19,6 +121,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -30,6 +133,7 @@
     </dependencyManagement>
 
     <dependencies>
+
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
@@ -55,42 +159,49 @@
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.junit.vintage</groupId>
             <artifactId>junit-vintage-engine</artifactId>
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest</artifactId>
             <version>${hamcrest.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
             <version>${hamcrest-all.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.apache.maven.surefire</groupId>
             <artifactId>surefire-logger-api</artifactId>
@@ -155,43 +266,5 @@
         </profile>
     </profiles>
 
-    <properties>
-        <java.version>11</java.version>
-        <rest-assured.version>3.3.0</rest-assured.version>
-
-        <!-- plugins -->
-        <thin.version>1.0.22.RELEASE</thin.version>
-        <spring-boot.version>2.5.4</spring-boot.version>
-        <aspectjweaver.version>1.9.1</aspectjweaver.version>
-        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-
-        <!-- this property can be removed once we update Mockito version in the main pom.xml -->
-        <mockito.version>3.4.0</mockito.version>
-        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-
-        <junit-platform.version>1.8.1</junit-platform.version>
-        <junit-jupiter.version>5.8.1</junit-jupiter.version>
-        <junit-platform-surefire-provider.version>1.3.2</junit-platform-surefire-provider.version>
-
-        <junit.version>4.13.2</junit.version>
-        <hamcrest.version>2.2</hamcrest.version>
-        <hamcrest-all.version>1.3</hamcrest-all.version>
-        <mockito.version>3.3.0</mockito.version>
-        <byte-buddy.version>1.11.20</byte-buddy.version>
-
-        <commons-io.version>2.11.0</commons-io.version>
-        <commons-lang.version>2.6</commons-lang.version>
-        <commons-lang3.version>3.12.0</commons-lang3.version>
-        <commons-cli.version>1.4</commons-cli.version>
-        <commons-fileupload.version>1.4</commons-fileupload.version>
-
-        <jackson.version>2.13.0</jackson.version>
-        <!-- logging -->
-        <org.slf4j.version>1.7.32</org.slf4j.version>
-        <logback.version>1.2.6</logback.version>
-        <log4j.version>1.2.17</log4j.version>
-
-    </properties>
 
 </project>
