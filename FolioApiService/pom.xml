@@ -3,12 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.4</version>
-		<relativePath /> <!-- lookup parent from repository -->
-	</parent>
+
 	<groupId>edu.cornell.library</groupId>
 	<artifactId>FolioApiService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -16,11 +11,15 @@
 	<name>FolioApiService</name>
 	<description>FolioApiService</description>
 
+        <parent>
+            <groupId>edu.cornell.library</groupId>
+            <artifactId>parent-boot-2</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <relativePath>../parent-boot-2</relativePath>
+        </parent>
+
 	<properties>
 		<java.version>11</java.version>
-                <org.slf4j.version>1.7.32</org.slf4j.version>
-                <logback.version>1.2.6</logback.version>
-                <log4j.version>1.2.17</log4j.version>
 	</properties>
 
 	<dependencies>
@@ -70,13 +69,13 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>${org.slf4j.version}</version>
+			<version>${slf4j.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>${org.slf4j.version}</version>
+			<version>${slf4j.version}</version>
 		</dependency>
 
 		<dependency>
