@@ -10,10 +10,8 @@ Misc/tdbs/
 */log/
 */support/
 */.classpath
-*/.project
-.settings
-.settings/*
 .project
+.settings
 */scripts/*.json
 
 # ignore specific files
