@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+	         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>edu.cornell.library</groupId>
+	<artifactId>JschDemo</artifactId>
+	<version>1.0</version>
+	<name>JschDemo</name>
+
+        <parent>
+            <groupId>edu.cornell.library</groupId>
+            <artifactId>parent-1</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <relativePath>../parent-1</relativePath>
+        </parent>
+
+	<properties>
+		<java.version>11</java.version>
+		<junit.version>5.4.0</junit.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
+			<version>${jcraft.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
