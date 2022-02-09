@@ -1,4 +1,4 @@
-package edu.cornell.library.misc;
+package edu.cornell.library.misc.orcid;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

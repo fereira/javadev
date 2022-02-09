@@ -1,8 +1,8 @@
-package edu.cornell.library.misc.xml;
+package edu.cornell.library.misc.jena;
 
 import java.util.HashMap;
 
-import com.hp.hpl.jena.sparql.resultset.ResultsFormat;
+import org.apache.jena.sparql.resultset.ResultsFormat;
 
 public class JenaResultSetTest {
 	 

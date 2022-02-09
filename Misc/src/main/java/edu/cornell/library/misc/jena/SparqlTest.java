@@ -3,7 +3,7 @@ package edu.cornell.library.misc.jena;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import com.hp.hpl.jena.sparql.resultset.ResultsFormat; 
+import org.apache.jena.sparql.resultset.ResultsFormat; 
 
 public class SparqlTest {
 	

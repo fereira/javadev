@@ -1,9 +1,9 @@
-package edu.cornell.library.misc;
+package edu.cornell.library.misc.jena;
 
-import static com.hp.hpl.jena.rdf.model.ResourceFactory.createProperty;
-import static com.hp.hpl.jena.rdf.model.ResourceFactory.createResource;
+import static org.apache.jena.rdf.model.ResourceFactory.createProperty;
+import static org.apache.jena.rdf.model.ResourceFactory.createResource;
 
-import com.hp.hpl.jena.shared.InvalidPropertyURIException;
+import org.apache.jena.shared.InvalidPropertyURIException;
 
 public class UriTest {
 

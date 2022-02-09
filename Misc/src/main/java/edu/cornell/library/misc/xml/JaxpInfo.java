@@ -1,4 +1,4 @@
-package edu.cornell.library.misc;
+package edu.cornell.library.misc.xml;
 
 import java.security.CodeSource;
 import java.text.MessageFormat;
