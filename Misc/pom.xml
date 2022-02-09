@@ -94,7 +94,6 @@
 		<!-- testing -->
 		<!-- this property can be removed once we update Mockito version in the main pom.xml -->
 		<mockito.version>3.4.0</mockito.version>
-		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 
 		<junit-platform.version>1.8.1</junit-platform.version>
 		<junit-jupiter.version>5.8.1</junit-jupiter.version>
@@ -576,7 +575,7 @@
 					<redirectTestOutputToFile>true</redirectTestOutputToFile>
 					<skipTests>${skipTests}</skipTests>
 				</configuration>
-				<version>2.22.0</version>
+				<version>${maven-surefire-plugin.version}</version>
 			</plugin>
 
 		</plugins>
