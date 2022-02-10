@@ -57,15 +57,8 @@
 		<elasticsearch.version>7.15.0</elasticsearch.version>
 
 		<!-- jena -->
-		<!--
-		<jena-core.version>2.10.0</jena-core.version>
-		<jena-arq.version>2.10.0</jena-arq.version>
-		<jena-iri.version>0.9.6</jena-iri.version>
-		<jena-sdb.version>1.3.6</jena-sdb.version>
-		<jena-tdb.version>0.10.0</jena-tdb.version>
-        -->
 
-        <jena-core.version>4.4.0</jena-core.version>
+                <jena-core.version>3.17.0</jena-core.version>
 		<jena-arq.version>3.17.0</jena-arq.version>
 		<jena-iri.version>3.17.0</jena-iri.version>
 		<jena-sdb.version>3.17.0</jena-sdb.version>
@@ -95,7 +88,7 @@
 		<marc4j.version>2.9.1</marc4j.version>
 		<itextpdf.version>5.5.10</itextpdf.version>
 		<org.restlet.version>2.3.11</org.restlet.version>
-
+                <xml-apis.version>1.4.01</xml-apis.version>
 		<jquery.version>3.4.1</jquery.version>
 		<bootstrap.version>4.3.1</bootstrap.version>
 		<webjars.version>2.1.0</webjars.version>
@@ -287,6 +280,7 @@
 			<version>${jaxb-bind.version}</version>
 		</dependency>
 -->
+
 		<dependency>
 			<groupId>org.jbibtex</groupId>
 			<artifactId>jbibtex</artifactId>
@@ -399,11 +393,6 @@
                                 <groupId>xml-apis</groupId>
                                 <artifactId>xml-apis</artifactId>
                             </exclusion>
-
-                            <exclusion>
-                                <groupId>jdom</groupId>
-                                <artifactId>jdom</artifactId>
-                            </exclusion>
                         </exclusions>        
 		</dependency>
 
@@ -472,6 +461,12 @@
 			<artifactId>opencsv</artifactId>
 			<version>${opencsv.version}</version>
 		</dependency>
+
+                <dependency>
+                        <groupId>xml-apis</groupId>
+                        <artifactId>xml-apis</artifactId>
+                        <version>${xml-apis.version}</version>
+                </dependency>
 
 		<dependency>
 			<groupId>xalan</groupId>
