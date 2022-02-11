@@ -53,13 +53,13 @@
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>jquery</artifactId>
-			<version>3.4.1</version>
+			<version>${jquery.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>bootstrap</artifactId>
-			<version>4.3.1</version>
+			<version>${bootstrap.version}</version>
 		</dependency>
 
 		<dependency>
@@ -70,18 +70,18 @@
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>js-cookie</artifactId>
-			<version>2.1.0</version>
+			<version>${webjars.version}</version>
 		</dependency>
 		
 		<dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webflux</artifactId>
-        </dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-webflux</artifactId>
+                </dependency>
 		
 		<dependency>
-            <groupId>io.projectreactor.netty</groupId>
-            <artifactId>reactor-netty</artifactId>
-        </dependency>
+                    <groupId>io.projectreactor.netty</groupId>
+                    <artifactId>reactor-netty</artifactId>
+                </dependency>
 
 	</dependencies>
 
