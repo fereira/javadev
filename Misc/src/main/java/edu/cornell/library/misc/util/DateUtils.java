@@ -30,19 +30,15 @@ public class DateUtils {
     public static final Long MILLISECONDSINYEAR = MILLISECONDSINDAY * 365;
 
     public static String getToday(String fmt) {
-       String today;
-       Calendar now = Calendar.getInstance();
-       SimpleDateFormat formatter = new SimpleDateFormat("yyyy-dd-MM");
-       today = formatter.format(now.getTime());
-       return today;
+       DateTimeFormatter dtf = DateTimeFormatter.ofPattern(fmt);
+       LocalDate localDate = LocalDate.now();
+       return dtf.format(localDate);
     }
 
     public static String getCurrentYear() {
-       String y;
-       Calendar now = Calendar.getInstance();
-       SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
-       y = formatter.format(now.getTime());
-       return y;
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy");
+        LocalDate localDate = LocalDate.now();
+        return dtf.format(localDate);
     }
 
 
@@ -77,18 +73,7 @@ public class DateUtils {
        return sqlTime;
     }
 
-    /**
-     * returns a formatted date/time as a string
-     *
-     * returns a date in the following format 01-04-03 08:21:57
-     */
-    public static String getFormattedDate() {
-       String s = null;
-       Calendar today = Calendar.getInstance();
-       s = new SimpleDateFormat("dd-MM-yy hh:mm:ss").format(today.getTime());
-        
-       return s;
-    }
+   
 
     /**
      * returns a formatted date/time as a string
@@ -108,6 +93,8 @@ public class DateUtils {
     /**
      * given a String date in a described format (i.e. YYYY-mm-dd) convert
      * it to a String date in a new format (i.e. MM-dd-YYYY)
+     * 
+     * This is the SimpleDateFormat implementation...See convertDateFormat of preferred impl 
      *
      * @param s input date string
      * @param formatin a format string
@@ -130,46 +117,40 @@ public class DateUtils {
        }
 
     }
-
+    
     /**
-     * returns a Date given a formatted string
+     * given a String date in a described format (i.e. YYYY-mm-dd) convert
+     * it to a String date in a new format (i.e. MM-dd-YYYY)
+     * 
+     * This is the preferred Impl
+     *
+     * @param input input date string
+     * @param inFmt a format string
+     * @param outFmt a format string
+     * @return formated date string
      */
-    public static java.util.Date setDate(String s) {
-       SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yy hh:mm:ss");
-       ParsePosition pos = new ParsePosition(0);
-       java.util.Date newDate = formatter.parse(s, pos);
-       return newDate;
+    public static String convertDateFormat(String input, String inFmt, String outFmt) {
+        // String input = "2022-03-14 10:42:00 ";
+        DateTimeFormatter oldPattern = DateTimeFormatter.ofPattern("E, dd MMM yyyy HH:mm:ss");
+        DateTimeFormatter newPattern = DateTimeFormatter.ofPattern("E, MMM dd, yyyy");
+        LocalDateTime datetime = LocalDateTime.parse(input.trim(), oldPattern);
+
+        ZonedDateTime zonedDateTime = ZonedDateTime.of(datetime, ZoneId.of("UTC"));
+        return datetime.format(newPattern);
     }
 
     /**
      * returns a Date given a formatted string
      */
-    public static java.util.Date setDate(String s, String fmt) {
+    public static java.util.Date setDate(String ds, String fmt) {
        SimpleDateFormat formatter = new SimpleDateFormat(fmt);
        ParsePosition pos = new ParsePosition(0);
-       java.util.Date newDate = formatter.parse(s, pos);
+       java.util.Date newDate = formatter.parse(ds, pos);
        return newDate;
     }
 
-    /**
-     * returns a SQL Date given a formatted string
-     */
-    public static java.sql.Date getSQLDateFromString(String s) throws IllegalArgumentException {
-       if (s== null || s.length() == 0) {
-          throw new IllegalArgumentException();
-       } else {
-          // check if it is a strict valid datestring, if so convert it
-          // otherwise, do a lenient validation and fix the string if the day or month
-          // is a single digit.
-          if (validateDateString(s, true)) {
-             return java.sql.Date.valueOf(s);
-          } else if (validateDateString(s, false)) {
-             return java.sql.Date.valueOf(fixDateString(s));
-          } else {
-             throw new IllegalArgumentException();
-          }
-       }
-    }
+     
+     
 
     /**
      * returns a SQL Time given a formatted string
@@ -179,7 +160,7 @@ public class DateUtils {
     }
 
     /*
-     * return  a formatted version of a java.sqlDate
+     * return  a formatted version of a java.util.date
      */
     public static String getFormattedDate(java.util.Date date, String fmt) {
        String formattedDate = new String();
@@ -256,18 +237,7 @@ public class DateUtils {
        }
        return parts[0] + "-" + parts[1] + "-" + parts[2];
 
-    }
-    
-    public static String convertDateFormat(String input, String inFmt, String outFmt) {
-        // String input = "2022-03-14 10:42:00 ";
-        DateTimeFormatter oldPattern = DateTimeFormatter.ofPattern("E, dd MMM yyyy HH:mm:ss");
-        DateTimeFormatter newPattern = DateTimeFormatter.ofPattern("E, MMM dd, yyyy");
-        LocalDateTime datetime = LocalDateTime.parse(input.trim(), oldPattern);
-
-        ZonedDateTime zonedDateTime = ZonedDateTime.of(datetime, ZoneId.of("UTC"));
-        return datetime.format(newPattern);
-    }
-    
+    } 
     
  
 }
