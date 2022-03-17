@@ -1,7 +1,4 @@
-package edu.cornell.library.misc.agris;
-
-
-
+package edu.cornell.library.misc.agris; 
 
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;

@@ -10,7 +10,7 @@
 	<description>Misc</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- plugins -->
@@ -58,11 +58,12 @@
 
 		<!-- jena -->
 
-                <jena-core.version>3.17.0</jena-core.version>
-		<jena-arq.version>3.17.0</jena-arq.version>
-		<jena-iri.version>3.17.0</jena-iri.version>
+                <!-- 3.17.0 -->
+                <jena-core.version>4.2.0</jena-core.version>
+		<jena-arq.version>4.2.0</jena-arq.version>
+		<jena-iri.version>4.2.0</jena-iri.version>
 		<jena-sdb.version>3.17.0</jena-sdb.version>
-		<jena-tdb.version>3.17.0</jena-tdb.version>
+		<jena-tdb.version>4.2.0</jena-tdb.version>
 
 		<jersey-client.version>3.0.3</jersey-client.version>
 		<jersey-core.version>1.19.4</jersey-core.version>
@@ -461,13 +462,13 @@
 			<artifactId>opencsv</artifactId>
 			<version>${opencsv.version}</version>
 		</dependency>
-
+<!--
                 <dependency>
                         <groupId>xml-apis</groupId>
                         <artifactId>xml-apis</artifactId>
                         <version>${xml-apis.version}</version>
                 </dependency>
-
+-->
 		<dependency>
 			<groupId>xalan</groupId>
 			<artifactId>xalan</artifactId>

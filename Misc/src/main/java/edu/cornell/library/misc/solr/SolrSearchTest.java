@@ -6,10 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-
-import javax.xml.parsers.*;
-
+import java.util.Map; 
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery; 
 import org.apache.solr.client.solrj.SolrServerException;
@@ -21,8 +18,7 @@ import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.SolrInputDocument;
 import org.apache.solr.common.params.ModifiableSolrParams;
 import org.apache.solr.core.CoreContainer;
-import org.apache.solr.core.SolrCore;
-import org.xml.sax.*; 
+import org.apache.solr.core.SolrCore; 
 
 public class SolrSearchTest {
 	

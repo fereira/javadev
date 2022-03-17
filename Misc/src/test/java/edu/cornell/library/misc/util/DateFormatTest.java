@@ -65,7 +65,7 @@ public class DateFormatTest {
     
      
 
-    @Disabled
+    @Test
     public void testConvertStringDate() {
         System.out.println("testConvertStringDate");
         String input = "Tue, 08 Mar 2022 00:00:00"; 
@@ -88,7 +88,7 @@ public class DateFormatTest {
         System.out.println();
     }
     
-    @Disabled
+    @Test
     public void testConvertDateFormat() {
         System.out.println("testConvertDateFormat");
         String input = "Tue, 08 Mar 2022 00:00:00"; 
@@ -101,5 +101,22 @@ public class DateFormatTest {
         System.out.println();
         
     }
+    
+    @Test
+    public void testValidateDateString() {
+        System.out.println("testConvertDateFormat");
+        String input = "Tue, 08 Mar 2022 00:00:00"; 
+        String inFmt = "E, dd MMM yyyy HH:mm:ss";
+        String badFmt = "E, MMM dd, yyyy";
+        
+        boolean isValid = DateUtils.validateDateString(input, inFmt, false);
+        System.out.println("isValid "+ isValid);
+        
+        isValid = DateUtils.validateDateString(input, badFmt, false);
+        System.out.println("isValid "+ isValid);
+        System.out.println();
+        
+    }
+
 
 }

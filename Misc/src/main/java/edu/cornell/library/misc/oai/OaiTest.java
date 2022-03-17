@@ -7,8 +7,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
 
 import org.dlese.dpc.oai.harvester.HarvestMessageHandler;
 import org.dlese.dpc.oai.harvester.Harvester;
@@ -16,7 +14,7 @@ import org.dlese.dpc.oai.harvester.Hexception;
 import org.dlese.dpc.oai.harvester.OAIChangeListener;
 import org.dlese.dpc.oai.harvester.OAIErrorException;
 
-import org.xml.sax.SAXException;
+
  
 public class OaiTest {
 	

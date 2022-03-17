@@ -12,7 +12,7 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 
 import edu.cornell.library.misc.gps.bo.GPX;
 import edu.cornell.library.misc.gps.bo.Waypoint;
-import edu.cornell.library.misc.util.XMLUtils;
+//import edu.cornell.library.misc.util.XMLUtilsDeprecated;
 
 public class Waypoints2Xml {
 
@@ -77,7 +77,7 @@ public class Waypoints2Xml {
 		gpx.setWaypoints(waypoints);
 		
 		String xml = xstream.toXML(gpx);
-		XMLUtils.prettyPrint(xml);
+		System.out.println(xml);
 		
 		
 		

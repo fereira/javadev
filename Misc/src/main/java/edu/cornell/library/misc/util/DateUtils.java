@@ -217,9 +217,9 @@ public class DateUtils {
      * @param d
      * @return
      */
-    public static boolean validateDateString(String d, boolean lenient) {
+    public static boolean validateDateString(String d, String fmt, boolean lenient) {
        DateValidator validator = DateValidator.getInstance();
-       return validator.isValid(d, "yyyy-mm-dd");
+       return validator.isValid(d, fmt);
     }
 
     /**
