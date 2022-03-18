@@ -1,0 +1,30 @@
+# application.properties
+logging.config=classpath:logback-spring.xml
+logging.file.name=/cul/log/javadev/saml2demo.log
+logging.level.org.springframework.web=ERROR
+
+spring.main.lazy-initialization=true
+
+spring.security.saml2.singlesignon.sign-request=false
+
+# okta provider- see: https://developer.okta.com 
+#spring.security.saml2.singlesignon.url=change me
+#spring.security.saml2.entity-id=change me
+#spring.security.saml2.certificate=saml-certificate/okta.cert
+#spring.security.saml2.registration-id=okta-saml
+
+# cornell test - see: https://confluence.cornell.edu/display/SHIBBOLETH/Shibboleth+at+Cornell+Page
+spring.security.saml2.singlesignon.url=change me
+spring.security.saml2.singlesignon-post.url=change me
+spring.security.saml2.entity-id=change me
+spring.security.saml2.certificate=change me
+spring.security.saml2.registration-id=cornell-test-saml
+spring.security.saml2.metadata=change me
+
+# cornell prod = see https://confluence.cornell.edu/display/SHIBBOLETH/Shibboleth+at+Cornell+Page
+# spring.security.saml2.singlesignon.url=change me
+# spring.security.saml2.singlesignon-post.url=change me
+# spring.security.saml2.entity-id=change me
+# spring.security.saml2.certificate=change me
+# spring.security.saml2.registration-id=change me
+# spring.security.saml2.metadata=change me
