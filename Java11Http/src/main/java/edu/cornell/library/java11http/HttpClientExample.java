@@ -29,30 +29,36 @@ public class HttpClientExample {
     protected final static Log logger = LogFactory.getLog(HttpClientExample.class);
 
     public static void main(String[] args) throws Exception {
+        System.out.println("HttpClientExample");
         httpGetRequest();
         httpPostRequest();
         asynchronousGetRequest();
         asynchronousMultipleRequests();
         pushRequest();
+        System.out.println("Done.");
     }
 
     public static void httpGetRequest() throws URISyntaxException, IOException, InterruptedException {
+        System.out.println("Get Request");
+        String url = "http://jsonplaceholder.typicode.com/posts/1";
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
             .version(HttpClient.Version.HTTP_2)
-            .uri(URI.create("http://jsonplaceholder.typicode.com/posts/1"))
+            .uri(URI.create(url))
             .headers("Accept-Enconding", "gzip, deflate")
             .build();
         HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
 
         String responseBody = response.body();
         int responseStatusCode = response.statusCode();
-
-        logger.info("httpGetRequest: " + responseBody);
-        logger.info("httpGetRequest status code: " + responseStatusCode);
+        
+        System.out.println("httpGetRequest status code: " + responseStatusCode);
+        System.out.println("httpGetRequest: " + responseBody);
+        
     }
 
     public static void httpPostRequest() throws URISyntaxException, IOException, InterruptedException {
+        System.out.println("Post Request");
         HttpClient client = HttpClient.newBuilder()
             .version(HttpClient.Version.HTTP_2)
             .build();
@@ -62,10 +68,11 @@ public class HttpClientExample {
             .build();
         HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
         String responseBody = response.body();
-        logger.info("httpPostRequest : " + responseBody);
+        System.out.println("httpPostRequest : " + responseBody);
     }
 
     public static void asynchronousGetRequest() throws URISyntaxException {
+        System.out.println("Asynchronous Get Request");
         HttpClient client = HttpClient.newHttpClient();
         URI httpURI = new URI("http://jsonplaceholder.typicode.com/posts/1");
         HttpRequest request = HttpRequest.newBuilder(httpURI)
@@ -73,22 +80,23 @@ public class HttpClientExample {
             .build();
         CompletableFuture<Void> futureResponse = client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
             .thenAccept(resp -> {
-                logger.info("Got pushed response " + resp.uri());
-                logger.info("Response statuscode: " + resp.statusCode());
-                logger.info("Response body: " + resp.body());
+                System.out.println("Got pushed response " + resp.uri());
+                System.out.println("Response statuscode: " + resp.statusCode());
+                System.out.println("Response body: " + resp.body());
             });
-        logger.info("futureResponse" + futureResponse);
+        System.out.println("futureResponse" + futureResponse);
 
     }
 
     public static void asynchronousMultipleRequests() throws URISyntaxException {
+        System.out.println("Asynchronous Multiple Requests");
         HttpClient client = HttpClient.newHttpClient();
         List<URI> uris = Arrays.asList(new URI("http://jsonplaceholder.typicode.com/posts/1"), new URI("http://jsonplaceholder.typicode.com/posts/2"));
         List<HttpRequest> requests = uris.stream()
             .map(HttpRequest::newBuilder)
             .map(reqBuilder -> reqBuilder.build())
             .collect(Collectors.toList());
-        logger.info("Got pushed response1 " + requests);
+        System.out.println("Got pushed response1 " + requests);
         CompletableFuture.allOf(requests.stream()
             .map(request -> client.sendAsync(request, BodyHandlers.ofString()))
             .toArray(CompletableFuture<?>[]::new))
@@ -97,7 +105,7 @@ public class HttpClientExample {
     }
 
     public static void pushRequest() throws URISyntaxException, InterruptedException {
-        logger.info("Running HTTP/2 Server Push example...");
+        System.out.println("Push request");
 
         HttpClient httpClient = HttpClient.newBuilder()
             .version(Version.HTTP_2)
@@ -111,10 +119,10 @@ public class HttpClientExample {
         // void applyPushPromise​(HttpRequest initiatingRequest, HttpRequest pushPromiseRequest, Function<HttpResponse.BodyHandler<T>,​CompletableFuture<HttpResponse<T>>> acceptor)
         httpClient.sendAsync(pageRequest, BodyHandlers.ofString(), pushPromiseHandler())
             .thenAccept(pageResponse -> {
-                logger.info("Page response status code: " + pageResponse.statusCode());
-                logger.info("Page response headers: " + pageResponse.headers());
+                System.out.println("Page response status code: " + pageResponse.statusCode());
+                System.out.println("Page response headers: " + pageResponse.headers());
                 String responseBody = pageResponse.body();
-                logger.info(responseBody);
+                System.out.println(responseBody);
             }).join();
 
         Thread.sleep(1000); // waiting for full response
@@ -127,10 +135,10 @@ public class HttpClientExample {
             CompletableFuture<HttpResponse<String>>> acceptor) -> {
             acceptor.apply(BodyHandlers.ofString())
                 .thenAccept(resp -> {
-                    logger.info(" Pushed response: " + resp.uri() + ", headers: " + resp.headers());
+                    System.out.println(" Pushed response: " + resp.uri() + ", headers: " + resp.headers());
                 });
-            logger.info("Promise request: " + pushPromiseRequest.uri());
-            logger.info("Promise request: " + pushPromiseRequest.headers());
+            System.out.println("Promise request: " + pushPromiseRequest.uri());
+            System.out.println("Promise request: " + pushPromiseRequest.headers());
         };
     }
 

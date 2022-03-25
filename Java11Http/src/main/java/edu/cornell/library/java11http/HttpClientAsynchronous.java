@@ -21,10 +21,11 @@ public class HttpClientAsynchronous {
             .build();
 
     public static void main(String[] args) throws Exception {
-
+        System.out.println("HttpClientAsynchronous");
+        String url = "https://httpbin.org/get";
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
-                .uri(URI.create("https://httpbin.org/get"))
+                .uri(URI.create(url))
                 .setHeader("User-Agent", "Java 11 HttpClient Bot")
                 .build();
 
@@ -33,7 +34,7 @@ public class HttpClientAsynchronous {
 
         String result = (String) response.thenApply(HttpResponse::body).get(5, TimeUnit.SECONDS);
 
-        logger.info(result);
+        System.out.println(result);
 
     }
 

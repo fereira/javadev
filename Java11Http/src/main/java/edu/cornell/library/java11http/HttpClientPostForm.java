@@ -24,7 +24,8 @@ public class HttpClientPostForm {
             .build();
 
     public static void main(String[] args) throws IOException, InterruptedException {
-
+        System.out.println("HttpClientPostForm");
+        String url = "https://httpbin.org/post";
         // form parameters
         Map<Object, Object> data = new HashMap<>();
         data.put("username", "abc");
@@ -34,7 +35,7 @@ public class HttpClientPostForm {
 
         HttpRequest request = HttpRequest.newBuilder()
                 .POST(ofFormData(data))
-                .uri(URI.create("https://httpbin.org/post"))
+                .uri(URI.create(url))
                 .setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
                 .header("Content-Type", "application/x-www-form-urlencoded")
                 .build();
@@ -42,10 +43,10 @@ public class HttpClientPostForm {
         HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
         // print status code
-        logger.info(response.statusCode());
+        System.out.println("StatusCode: "+ response.statusCode());
 
         // print response body
-        logger.info(response.body());
+        System.out.println(response.body());
 
     }
 

@@ -31,10 +31,11 @@ public class HttpClientSynchronous {
             .build();
 
     public static void main(String[] args) throws IOException, InterruptedException {
-
+        System.out.println("HttpClientSynchronous");
+        String url = "https://httpbin.org/get";
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
-                .uri(URI.create("https://httpbin.org/get"))
+                .uri(URI.create(url))
                 .setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
                 .build();
 
@@ -45,10 +46,10 @@ public class HttpClientSynchronous {
         headers.map().forEach((k, v) -> logger.info(k + ":" + v));
 
         // print status code
-        logger.info(response.statusCode());
+        System.out.println(response.statusCode());
 
         // print response body
-        logger.info(response.body());
+        System.out.println(response.body());
 
     }
 

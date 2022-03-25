@@ -32,17 +32,18 @@ public class HttpClientAuthentication {
             .build();
 
     public static void main(String[] args) throws IOException, InterruptedException {
-
+        System.out.println("HttpClientAuthentication");
+        String url = "https://httpbin.org/get";
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
-                .uri(URI.create("http://localhost:8080/books"))
+                .uri(URI.create(url))
                 .setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
                 .build();
 
         HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
         // print status code
-        logger.info(response.statusCode());
+        System.out.println(response.statusCode());
 
         // print response body
         logger.info(response.body());

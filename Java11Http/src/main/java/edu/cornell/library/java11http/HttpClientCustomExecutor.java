@@ -29,7 +29,7 @@ public class HttpClientCustomExecutor {
             .build();
 
     public static void main(String[] args) throws Exception {
-
+        System.out.println("HttpClientCustomExecutor");
         List<URI> targets = Arrays.asList(
                 new URI("https://httpbin.org/get?name=mkyong1"),
                 new URI("https://httpbin.org/get?name=mkyong2"),
@@ -46,7 +46,7 @@ public class HttpClientCustomExecutor {
                 .collect(Collectors.toList());
 
         for (CompletableFuture<String> future : result) {
-            logger.info(future.get());
+            System.out.println(future.get());
         }
 
     }

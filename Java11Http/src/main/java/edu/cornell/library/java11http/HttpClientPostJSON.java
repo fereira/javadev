@@ -20,7 +20,9 @@ public class HttpClientPostJSON {
             .build();
 
     public static void main(String[] args) throws IOException, InterruptedException {
-
+        System.out.println("HttpClientPostJSON");
+        String url = "https://httpbin.org/post";
+        
         // json formatted data
         String json = new StringBuilder()
                 .append("{")
@@ -31,7 +33,7 @@ public class HttpClientPostJSON {
         // add json header
         HttpRequest request = HttpRequest.newBuilder()
                 .POST(HttpRequest.BodyPublishers.ofString(json))
-                .uri(URI.create("https://httpbin.org/post"))
+                .uri(URI.create(url))
                 .setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
                 .header("Content-Type", "application/json")
                 .build();
@@ -39,10 +41,10 @@ public class HttpClientPostJSON {
         HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
         // print status code
-        logger.info(response.statusCode());
+        System.out.println(response.statusCode());
 
         // print response body
-        logger.info(response.body());
+        System.out.println(response.body());
 
     }
 
