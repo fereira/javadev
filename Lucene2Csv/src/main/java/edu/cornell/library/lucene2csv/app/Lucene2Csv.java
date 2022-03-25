@@ -29,14 +29,15 @@ import com.opencsv.ICSVParser;
 import com.opencsv.ICSVWriter;
 
 public class Lucene2Csv {
-	private static final String INDEX_DIR = "/cul/data/skosmos/lucene/nalt";
+	private static final String INDEX_DIR = "/cul/data/skosmos/lucene/nalt"; 
 	private static final String OUTFILE = "/cul/src/javadev/Lucene2Csv/nalt.csv";
 
 	public static void main(String[] args) throws Exception {
-		File indexDir = new File("/cul/data/skosmos/lucene/nalt");
+	    File indexDir = new File(INDEX_DIR); 
     	FSDirectory index = FSDirectory.open(indexDir.toPath());
-    	DirectoryReader reader = DirectoryReader.open(index);
+    	DirectoryReader reader = DirectoryReader.open(index); 
     	
+    	System.out.println("Instaniating lucene searcher");
         IndexSearcher searcher = new IndexSearcher(reader); 
 
 		// Search by lang to get all terms
@@ -62,6 +63,7 @@ public class Lucene2Csv {
 		
 	    //Write the record to file
 	    csvWriter.writeNext(line1);
+	    System.out.println("writig to output file: "+ OUTFILE);
 	    for (final ScoreDoc scoreDoc : topDocs.scoreDocs) {
 	        Document d  = searcher.doc(scoreDoc.doc);
 	        String uri = d.get("uri");

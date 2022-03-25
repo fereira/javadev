@@ -19,6 +19,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<lucene.version>7.7.3</lucene.version> <!-- override version in parent pom -->
 	</properties>
 
 	<dependencies>
