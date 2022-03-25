@@ -19,7 +19,7 @@ public class ProcessBuilderExample {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); 
         LocalDateTime ldt = LocalDateTime.now();
         envMap.put("LAST_INDEX", ldt.format(dtf));
-         
+        System.out.println("adding LAST_INDEX variable with current time to environment"); 
         processBuilder.command("/bin/bash", "-c", "echo $LAST_INDEX");
 
         try {
@@ -32,13 +32,13 @@ public class ProcessBuilderExample {
 
             String line;
             while ((line = reader.readLine()) != null) {
-                // System.out.println(line);
+                 System.out.println(line);
             } 
             int exitCode = process.waitFor();
             System.out.println("\nExited with error code : " + exitCode);
             
             String lastIndex = System.getenv("LAST_INDEX");
-            System.out.println("LAST_INDEX = "+ lastIndex); 
+            System.out.println("from Env: LAST_INDEX = "+ lastIndex); 
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
