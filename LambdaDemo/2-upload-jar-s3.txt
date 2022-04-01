@@ -1,0 +1,6 @@
+#!/bin/sh
+JARFILE=target/AWSLambdaDemoApp-1.0-SNAPSHOT.jar
+ARTIFACT_BUCKET=$(cat bucket-name.txt)
+set -eo pipefail
+echo "uploading $JARFILE to s3://$ARTIFACT_BUCKET"
+aws s3 cp $JARFILE  s3://$ARTIFACT_BUCKET
