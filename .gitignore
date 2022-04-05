@@ -10,7 +10,7 @@ Misc/tdbs/
 */log/
 */support/
 */.classpath
-*/awssenv.sh
+*/awsenv.sh
 .project
 .settings
 */scripts/*.json
