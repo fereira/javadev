@@ -21,6 +21,7 @@ application.yaml
 Lucene2Csv/nalt.csv
 FolioApiService/output
 OpenCsvDemo/data.tsv
+LuceneDemo/testindex
 
 */src/main/resources/saml-certificate/*
 
