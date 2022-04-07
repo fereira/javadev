@@ -37,7 +37,7 @@ public class LookupFundCodesTest extends LookupUtilBaseTest {
 	        map = this.getUtil().getFundCodes(endpoint, this.getToken());            
 	           
             if (debug) {
-                System.setOut(new PrintStream(new FileOutputStream("/cul/src/SampleProject/fundCodes.json")));
+                System.setOut(new PrintStream(new FileOutputStream("/cul/src/javadev/FolioApiService/output/fundCodes.json")));
                 System.out.println("map size: " + map.size());
                 Iterator iter = map.keySet().iterator();
                 while (iter.hasNext()) {

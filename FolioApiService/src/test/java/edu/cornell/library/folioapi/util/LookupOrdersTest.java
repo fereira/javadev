@@ -39,7 +39,7 @@ public class LookupOrdersTest extends LookupUtilBaseTest {
 	        JSONArray locArray = jsonObject.getJSONArray("purchaseOrders");
             System.out.println("len: " + locArray.length());
             if (debug) {
-                System.setOut(new PrintStream(new FileOutputStream("/cul/src/SampleProject/composite-orders.json")));
+                System.setOut(new PrintStream(new FileOutputStream("/cul/src/javadev/FolioApiService/output/composite-orders.json")));
                 System.out.println(endpoint);
                 System.out.println(jsonObject.toString(3));
                 System.setOut(stdout);

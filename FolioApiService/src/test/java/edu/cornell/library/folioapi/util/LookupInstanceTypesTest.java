@@ -36,7 +36,7 @@ public class LookupInstanceTypesTest extends LookupUtilBaseTest {
 	        HashMap<String, String> map = this.getUtil().getInstanceTypes(endpoint, this.getToken());
 	           
             if (debug) {
-                System.setOut(new PrintStream(new FileOutputStream("/cul/src/SampleProject/instance-types.json")));
+                System.setOut(new PrintStream(new FileOutputStream("/cul/src/javadev/FolioApiService/output/instance-types.json")));
                 System.out.println(endpoint);
                 Iterator<String> iter = map.keySet().iterator();
                 while (iter.hasNext()) {

@@ -37,7 +37,7 @@ public class LookupClassificationTypesTest extends LookupUtilBaseTest {
 	        
 	       
             if (debug) {
-                System.setOut(new PrintStream(new FileOutputStream("/cul/src/SampleProject/classification-types.json")));
+                System.setOut(new PrintStream(new FileOutputStream("/cul/src/javadev/FolioApiService/output/classification-types.json")));
                 System.out.println("map size: " + map.size());
                 Iterator iter = map.keySet().iterator();
                 while (iter.hasNext()) {

@@ -39,7 +39,7 @@ public class LookupOrderLinesTest extends LookupUtilBaseTest {
             System.out.println("len: " + locArray.length());
             
             if (debug) {
-                System.setOut(new PrintStream(new FileOutputStream("/cul/src/SampleProject/orderlines.json")));
+                System.setOut(new PrintStream(new FileOutputStream("/cul/src/javadev/FolioApiService/output/orderlines.json")));
                 System.out.println(endpoint);
                 System.out.println(jsonObject.toString(3));
                 System.setOut(stdout);

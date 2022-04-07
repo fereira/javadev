@@ -35,7 +35,7 @@ public class LookupContributorTypesTest extends LookupUtilBaseTest {
 	        map= this.getUtil().getContributorTypes(endpoint, this.getToken());
             
             if (debug) {
-                System.setOut(new PrintStream(new FileOutputStream("/cul/src/SampleProject/contributor-types.json")));
+                System.setOut(new PrintStream(new FileOutputStream("/cul/src/javadev/FolioApiService/output/contributor-types.json")));
                 System.out.println("map size: " + map.size());
                 Iterator iter = map.keySet().iterator();
                 while (iter.hasNext()) {

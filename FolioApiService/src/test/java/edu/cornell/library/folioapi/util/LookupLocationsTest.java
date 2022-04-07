@@ -36,7 +36,7 @@ public class LookupLocationsTest extends LookupUtilBaseTest {
 	         
 	        map = this.getUtil().getLocations(endpoint, this.getToken());
 	        if (debug) {
-                System.setOut(new PrintStream(new FileOutputStream("/cul/src/SampleProject/locations.json")));
+                System.setOut(new PrintStream(new FileOutputStream("/cul/src/javadev/FolioApiService/output/locations.json")));
                 System.out.println("map size: " + map.size());
                 Iterator iter = map.keySet().iterator();
                 while (iter.hasNext()) {

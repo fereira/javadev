@@ -36,7 +36,7 @@ public class LookupMaterialTypesTest extends LookupUtilBaseTest {
 	        
 	        map = this.getUtil().getMaterialTypes(endpoint, this.getToken()); 
             if (debug) {
-                System.setOut(new PrintStream(new FileOutputStream("/cul/src/SampleProject/material-types.json")));
+                System.setOut(new PrintStream(new FileOutputStream("/cul/src/javadev/FolioApiService/output/material-types.json")));
                 System.out.println("map size: " + map.size());
                 Iterator iter = map.keySet().iterator();
                 while (iter.hasNext()) {

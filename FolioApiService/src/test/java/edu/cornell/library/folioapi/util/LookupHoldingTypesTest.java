@@ -36,7 +36,7 @@ public class LookupHoldingTypesTest extends LookupUtilBaseTest {
 	        HashMap<String, String> map = this.getUtil().getHoldingsTypes(endpoint, this.getToken());
 	           
             if (debug) {
-                System.setOut(new PrintStream(new FileOutputStream("/cul/src/SampleProject/holding-types.json")));
+                System.setOut(new PrintStream(new FileOutputStream("/cul/src/javadev/FolioApiService/output/holding-types.json")));
                 System.out.println(endpoint);
                 Iterator<String> iter = map.keySet().iterator();
                 while (iter.hasNext()) {

@@ -35,7 +35,7 @@ public class LookupVendorInfoTest extends LookupUtilBaseTest {
             JSONObject jsonObject = new JSONObject(response);
            
             if (debug) {
-                System.setOut(new PrintStream(new FileOutputStream("/cul/src/SampleProject/output.json")));
+                System.setOut(new PrintStream(new FileOutputStream("/cul/src/javadev/FolioApiService/output/output.json")));
                 System.out.println(endpoint);
                 System.out.println(jsonObject.toString(3));
                 System.setOut(stdout);

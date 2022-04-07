@@ -36,7 +36,7 @@ public class LookupNoteTypesTest extends LookupUtilBaseTest {
 	        HashMap<String, String> map = this.getUtil().getNoteTypes(endpoint, this.getToken());            
             
             if (debug) {
-                System.setOut(new PrintStream(new FileOutputStream("/cul/src/SampleProject/note-types.json")));
+                System.setOut(new PrintStream(new FileOutputStream("/cul/src/javadev/FolioApiService/output/note-types.json")));
                 System.out.println("map size: " + map.size());
                 Iterator iter = map.keySet().iterator();
                 while (iter.hasNext()) {

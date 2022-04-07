@@ -33,7 +33,7 @@ public class LookupIdentifierTypesTest extends LookupUtilBaseTest {
 	        HashMap<String, String> map = this.getUtil().getIdentifierTypes(endpoint, this.getToken());
 	       
             if (debug) {
-                System.setOut(new PrintStream(new FileOutputStream("/cul/src/SampleProject/identifier-types.json")));
+                System.setOut(new PrintStream(new FileOutputStream("/cul/src/javadev/FolioApiService/output/identifier-types.json")));
                 System.out.println(endpoint);
                 Iterator<String> iter = map.keySet().iterator();
                 while (iter.hasNext()) {

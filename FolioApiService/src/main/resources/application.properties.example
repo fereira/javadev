@@ -1,0 +1,27 @@
+# Use if spring-boot devtools is included
+# spring.devtools.restart.additional-paths = /path-to-folder
+
+logging.config=classpath:logback-spring.xml
+logging.file.name=/cul/log/javadev/FolioAppService.log
+logging.level.org.springframework.web=ERROR
+logging.level.org.edu.cornell.library.folioapi=DEBUG
+
+# baseOkapEndpoint = https://folio-snapshot-load-okapi.dev.folio.org/
+
+
+# use this for training
+baseFolioUrl = https://cornell-training.folio.ebsco.com/
+baseOkapEndpoint = https://okapi-cornell-training.folio.ebsco.com/
+
+# use this for production folio
+# baseFolioUrl=https://cornell.folio.ebsco.com/
+# baseOkapEndpoint=https://okapi-cornell.folio.ebsco.com/
+
+# use this for  test
+# baseFolioUrl = https://cornell-test.folio.ebsco.com/
+# baseOkapEndpoint = https://okapi-cornell-test.folio.ebsco.com/
+
+okapi_username = CHANGE ME
+okapi_password = CHANGE ME
+tenant = CHANGE ME
+
