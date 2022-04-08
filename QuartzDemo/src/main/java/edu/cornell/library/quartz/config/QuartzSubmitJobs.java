@@ -1,4 +1,4 @@
-package edu.cornell.library.SampleWebapp.config;
+package edu.cornell.library.quartz.config;
 
  
 import java.time.LocalDateTime;
@@ -21,9 +21,9 @@ import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
 import org.springframework.scheduling.quartz.JobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
 
-import edu.cornell.library.SampleWebapp.jobs.SimpleJob;
-import edu.cornell.library.SampleWebapp.jobs.SimpleJob2;
-import edu.cornell.library.SampleWebapp.util.ScheduleUtil; 
+import edu.cornell.library.quartz.jobs.SimpleJob;
+import edu.cornell.library.quartz.jobs.SimpleJob2;
+import edu.cornell.library.quartz.util.ScheduleUtil; 
 
 @Configuration
 public class QuartzSubmitJobs {

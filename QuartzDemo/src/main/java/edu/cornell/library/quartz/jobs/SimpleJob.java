@@ -1,4 +1,4 @@
-package edu.cornell.library.SampleWebapp.jobs;
+package edu.cornell.library.quartz.jobs;
  
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;

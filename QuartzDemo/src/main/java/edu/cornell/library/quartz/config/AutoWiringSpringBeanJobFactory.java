@@ -1,4 +1,4 @@
-package edu.cornell.library.SampleWebapp.config;
+package edu.cornell.library.quartz.config;
 
 import org.quartz.spi.TriggerFiredBundle;
 import org.springframework.beans.BeansException;

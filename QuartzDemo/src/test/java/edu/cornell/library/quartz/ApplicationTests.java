@@ -1,10 +1,10 @@
-package edu.cornell.library.SampleWebapp;
+package edu.cornell.library.quartz;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SampleWebappApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,4 +1,4 @@
-package edu.cornell.library.SampleWebapp;
+package edu.cornell.library.quartz;
 
 import org.springframework.boot.Banner.Mode;
 import org.springframework.boot.SpringApplication;
@@ -10,11 +10,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @ComponentScan
 @EnableScheduling
 @SpringBootApplication
-public class SampleWebappApplication {
+public class Application {
 
 	public static void main(String[] args) {
 		//SpringApplication.run(SampleWebappApplication.class, args);
-		new SpringApplicationBuilder(SampleWebappApplication.class).bannerMode(Mode.OFF).run(args);
+		new SpringApplicationBuilder(Application.class).bannerMode(Mode.OFF).run(args);
 	}
 
 }

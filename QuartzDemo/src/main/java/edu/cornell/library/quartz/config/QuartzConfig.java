@@ -1,4 +1,4 @@
-package edu.cornell.library.SampleWebapp.config;
+package edu.cornell.library.quartz.config;
  
 import org.apache.commons.lang3.ArrayUtils;
 import org.quartz.CronTrigger;
@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.quartz.*;
 
-import edu.cornell.library.SampleWebapp.util.ScheduleUtil;
+import edu.cornell.library.quartz.util.ScheduleUtil;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;

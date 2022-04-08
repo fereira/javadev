@@ -1,4 +1,4 @@
-package edu.cornell.library.SampleWebapp.util;
+package edu.cornell.library.quartz.util;
 
 import org.quartz.SimpleScheduleBuilder;
 import org.quartz.spi.MutableTrigger;
