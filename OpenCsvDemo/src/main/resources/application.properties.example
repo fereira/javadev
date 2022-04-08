@@ -1,0 +1,11 @@
+# core properties
+spring.application.name=SampleWebapp
+spring.profiles.active=dev
+debug=false
+logging.config=classpath:logback-spring.xml
+logging.file.name=/cul/log/javadev/opencsv.log
+logging.level.org.springframework.web=ERROR
+logging.level.edu.cornell.library.opencsv==INFO
+
+server.address=127.0.0.1
+server.port=4000

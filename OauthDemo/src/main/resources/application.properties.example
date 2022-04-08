@@ -1,7 +1,21 @@
-# application.properties
+# core properties
+spring.application.name=OauthDemo
+spring.profiles.active=dev
+debug=false
 logging.config=classpath:logback-spring.xml
-logging.file.name=/cul/log/javadev/oauthdemo.log
+logging.file.name=/cul/log/javadev/OauthDemo.log
 logging.level.org.springframework.web=ERROR
+logging.level.edu.cornell.library.opencsv==INFO
 
+server.address=127.0.0.1
+server.port=4000 
 spring.main.lazy-initialization=true
+
+spring.security.oauth2.client.registration.github.clientId=change me
+spring.security.oauth2.client.registration.github.clientSecret=change me
+spring.security.oauth2.client.registration.scope.user=email
+spring.security.oauth2.client.registration.scope.read=user
+
+spring.security.oauth2.client.registration.google.client-id=change me
+spring.security.oauth2.client.registration.google.client-secret=change me
 
