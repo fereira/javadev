@@ -39,7 +39,7 @@ public class PositionPdf {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("Done.");
+        System.out.println("Created "+ FILE);
     }
 
 }

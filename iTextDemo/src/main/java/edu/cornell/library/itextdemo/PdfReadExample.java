@@ -16,7 +16,7 @@ public class PdfReadExample {
         PdfReader reader;
 
         try {
-
+            System.out.println("Reading "+ FILE_NAME);
             reader = new PdfReader(FILE_NAME);
 
             // pageNumber = 1

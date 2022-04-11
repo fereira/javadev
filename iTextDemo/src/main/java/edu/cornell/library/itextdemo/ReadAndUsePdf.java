@@ -35,7 +35,7 @@ public class ReadAndUsePdf {
             }
         }
         document.close();
-        System.out.println("Done.");
+        System.out.println("Created "+ OUTPUTFILE +" from "+ INPUTFILE);
 
     }
 

@@ -45,7 +45,7 @@ public class FirstPdf {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("Done.");
+        System.out.println("Created "+ FILE);
     }
 
     // iText allows to add metadata to the PDF which can be viewed in your Adobe
