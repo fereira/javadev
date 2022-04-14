@@ -1,4 +1,4 @@
-package edu.cornell.library.springsecuritythymeleaf;
+package edu.cornell.library.springsecurity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -16,16 +16,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http
+        .authorizeRequests()
             .anyRequest()
             .authenticated()
             .and()
-            .formLogin()
+        .formLogin()
             .loginPage("/login")
             .permitAll()
             .successForwardUrl("/index")
             .and()
-            .logout()
+        .logout()
             .permitAll()
             .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
             .logoutSuccessUrl("/login");
@@ -33,14 +34,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-            .withUser("user")
-            .password(passwordEncoder().encode("password"))
-            .roles("USER")
-            .and()
+        auth
+            .inMemoryAuthentication()
+                .withUser("user")
+                .password(passwordEncoder().encode("password"))
+                .roles("USER")
+                .and()
             .withUser("admin")
-            .password(passwordEncoder().encode("admin"))
-            .roles("ADMIN");
+                .password(passwordEncoder().encode("admin"))
+                .roles("ADMIN");
     }
     
     @Bean

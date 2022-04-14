@@ -5,14 +5,33 @@
 </head>
 <body>
 	<h2>Welcome</h2>
-	<p>Spring Security Thymeleaf tutorial</p>
-	<div sec:authorize="hasRole('USER')">Text visible to user.</div>
-	<div sec:authorize="hasRole('ADMIN')">Text visible to admin.</div>
-	<div sec:authorize="isAuthenticated()">Text visible only to
-		authenticated users.</div>
-	Authenticated username:
-	<div sec:authentication="name"></div>
+	<p>Spring Security Thymeleaf tutorial</p> 
+	
+	<div sec:authorize="hasRole('USER')">
+	<p>You are logged in as a regular user as:
+	<span sec:authentication="name"></span>
+	</p>
+	</div>
+	
+	<div sec:authorize="hasRole('ADMIN')">
+	
+	<p>You are logged in as an Admin.</p>
+	</div>
+	
+	<div sec:authorize="isAuthenticated()">
+	    <span>Authentication Successful.</span>
+	    <p>
+	    <form th:action="@{/logout}" method="post"> 
+                <input type="submit" value="Logout"/> 
+        </form>
+	    </p>
+	
+	</div> 
+	
+	<p>
 	Authenticated user roles:
 	<div sec:authentication="principal.authorities"></div>
+	</p>
+	
 </body>
 </html>
