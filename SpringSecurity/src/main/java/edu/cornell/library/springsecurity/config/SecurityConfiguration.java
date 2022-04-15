@@ -1,4 +1,4 @@
-package edu.cornell.library.springsecurity;
+package edu.cornell.library.springsecurity.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

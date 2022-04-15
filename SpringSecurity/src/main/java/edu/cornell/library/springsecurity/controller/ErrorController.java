@@ -1,4 +1,4 @@
-package edu.cornell.library.springsecurity;
+package edu.cornell.library.springsecurity.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
