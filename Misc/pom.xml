@@ -32,7 +32,7 @@
 		<commons-codec.version>1.14</commons-codec.version>
 		<commons-csv.version>1.9.0</commons-csv.version>
 		<commons-cli.version>1.5.0</commons-cli.version>
-		<commons-fileupload.version>1.4</commons-fileupload.version>
+		<commons-fileupload.version>1.5</commons-fileupload.version>
 		<commons-configuration.version>1.10</commons-configuration.version>
 
 		<!-- json -->
